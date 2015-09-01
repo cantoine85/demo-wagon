@@ -4,7 +4,8 @@ class CreateExperiences < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.string :address
-      t.datetime :date
+      t.datetime :startdate
+      t.datetime :enddate
       t.string :progress_status
       t.references :author_experience, index: true
       t.references :direct_parent_experience, index: true
