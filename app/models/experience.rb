@@ -19,7 +19,6 @@ class Experience < ActiveRecord::Base
   validates :title, presence: true
   validates :address, presence: true
   validates :user_id, uniqueness: true, presence: true
-  # validates :author_experience_id, uniqueness: true, presence: true
 
 
   # has_attached_file :picture,
