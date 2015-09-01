@@ -17,7 +17,6 @@ class Experience < ActiveRecord::Base
   has_and_belongs_to_many :categories
 
   validates :title, presence: true
-  validates :address, presence: true
   validates :user_id, uniqueness: true, presence: true
 
 
