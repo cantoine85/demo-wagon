@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  # Association
+  # A user has one profile
+  has_one :profile
+
 end
