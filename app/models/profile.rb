@@ -5,5 +5,6 @@ class Profile < ActiveRecord::Base
 
   # Validations
   validates :user, presence:true
+  validates :first_name, presence:true
 
 end
