@@ -32,13 +32,16 @@ ActiveRecord::Schema.define(version: 20150831200703) do
     t.text     "description"
     t.string   "address"
     t.datetime "date"
-    t.boolean  "done"
-    t.integer  "experience_parent_id"
+    t.string   "progress_status"
+    t.integer  "author_experience_id"
+    t.integer  "direct_parent_experience_id"
     t.integer  "user_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
+  add_index "experiences", ["author_experience_id"], name: "index_experiences_on_author_experience_id", using: :btree
+  add_index "experiences", ["direct_parent_experience_id"], name: "index_experiences_on_direct_parent_experience_id", using: :btree
   add_index "experiences", ["user_id"], name: "index_experiences_on_user_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
