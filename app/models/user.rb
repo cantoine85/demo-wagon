@@ -19,4 +19,12 @@ class User < ActiveRecord::Base
     end
   end
 
+  # Associations
+  has_one :profile, dependent: :destroy # A user has one profile
+  has_many :experiences, dependent: :destroy # A user has many experiences
+
+  # Validations
+  validates :email, presence:true, uniqueness:true
+  validates :password, presence:true
+
 end
