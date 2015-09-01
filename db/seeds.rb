@@ -6,7 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
 # Seed for categories
 names = ["sport", "voyage", "exposition", "spectacle", "balade", "cinéma", "lecture"]
 
@@ -42,11 +41,18 @@ experiences = [
     address: "Milan"
   },
   { title: "Agua de PINA BAUSCH",
-    description: "",
-    startdate: Time.zone.parse('2015-05-15'),
-    enddate: Time.zone.parse('2015-10-31'),
-    address: "Milan"
-  }
+    description: "FIÈVRE BRÉSILIENNE : L’insouciance, la couleur, les rythmes pimentent le flot ininterrompu de cette pièce de Pina Bausch sous influence voyageuse.",
+    startdate: Time.zone.parse('2016-05-07'),
+    enddate: Time.zone.parse('2015-05-15'),
+    address: "Théâtre de la Ville 75001 Paris"
+  },
+  { title: "Marathon de Paris",
+    description: "FIÈVRE BRÉSILIENNE : L’insouciance, la couleur, les rythmes pimentent le flot ininterrompu de cette pièce de Pina Bausch sous influence voyageuse.",
+    startdate: Time.zone.parse('2016-05-07'),
+    enddate: Time.zone.parse('2015-05-15'),
+    address: "Théâtre de la Ville 75001 Paris"
+  },
+
 ]
 
 # Create experiences
@@ -55,10 +61,9 @@ experiences.each do |experience|
 end
 
 # Add categories to experiences
-Experience.find(1).categories << Category.new(name: "sport")
+Experience.find(1).categories << Category.new(name: "exposition")
 Experience.find(1).categories << Category.new(name: "voyage")
-
-Experience.find(2).categories << Category.new(name: "sport")
+Experience.find(2).categories << Category.new(name: "spectacle")
 
 
 
