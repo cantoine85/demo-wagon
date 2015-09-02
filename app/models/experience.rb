@@ -1,4 +1,8 @@
 class Experience < ActiveRecord::Base
+
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   belongs_to :user
 
   # Direct relationships between experiences
@@ -14,7 +18,9 @@ class Experience < ActiveRecord::Base
   # An experience has one original parent
   belongs_to :author_experience, class_name: "Experience"
 
-  has_and_belongs_to_many :categories
+  # has_and_belongs_to_many :categories
+  has_many :categories_experiences
+  has_many :categories, through: :categories_experiences
 
   validates :title, presence: true
   validates :user_id, uniqueness: true, presence: true
