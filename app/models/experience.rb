@@ -19,10 +19,11 @@ class Experience < ActiveRecord::Base
   validates :title, presence: true
   validates :user_id, uniqueness: true, presence: true
 
+  # paperclip picture
+  has_attached_file :picture,
+    styles: { medium: "500x500>", thumb: "100x100>" }
 
-  # has_attached_file :picture,
-  #   styles: { medium: "500x500>", thumb: "100x100>" }
-
-  # validates_attachment_content_type :picture,
-  #   content_type: /\Aimage\/.*\z/
+  validates_attachment_content_type :picture,
+    content_type: /\Aimage\/.*\z/
 end
+

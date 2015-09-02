@@ -3,4 +3,6 @@ class Account::CategoriesController < ApplicationController
     #TODO
   end
 
+
+
 end
