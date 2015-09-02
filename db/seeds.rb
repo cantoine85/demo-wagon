@@ -11,7 +11,7 @@ User.destroy_all
 Category.destroy_all
 
 # Seed for categories
-names = ["sport", "voyage", "exposition", "spectacle", "balade", "cinéma", "lecture"]
+names = ["sport", "balade", "art", "littérature", "théâtre", "musique", "cinéma", "voyage"]
 
 names.each do |name|
   cat = Category.new(name: name)
@@ -75,18 +75,25 @@ experiences = [
   },
 ]
 
+experience_categories = [ "cinéma", "balade", "sport", "art", "voyage" ].reverse
+
 # Create experiences
-experiences.each do |experience|
-    e = Experience.create(experience)
+experiences.each_with_index do |experience, index|
+  e = Experience.new(experience)
+  e.categories << Category.find_by_name(experience_categories[index])
+  if e.save
+    puts "Saveeeeeeed !!!!!"
+  else
+    puts "Fuckeeeeed !!!"
+  end
 end
 
 # Add categories to experiences
-Experience.last.categories << Category.find_by(name: "cinéma")
-Experience.last(2).first.categories << Category.find_by(name: "balade")
-Experience.last(3).first.categories << Category.find_by(name: "sport")
-Experience.last(4).first.categories << Category.find_by(name: "spectacle")
-Experience.first.categories << Category.find_by(name: "voyage")
-Experience.first.categories << Category.find_by(name: "exposition")
+# Experience.last.categories << Category.find_by(name: "cinéma")
+# Experience.last(2).first.categories << Category.find_by(name: "balade")
+# Experience.last(3).first.categories << Category.find_by(name: "sport")
+# Experience.last(4).first.categories << Category.find_by(name: "art")
+# Experience.first.categories << Category.find_by(name: "voyage")
 
 # Add user_id to experience
 
