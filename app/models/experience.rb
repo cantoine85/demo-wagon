@@ -23,7 +23,7 @@ class Experience < ActiveRecord::Base
   has_many :categories, through: :categories_experiences
 
   validates :title, presence: true
-  validates :user_id, uniqueness: true, presence: true
+  # validates :user_id, uniqueness: true, presence: true
 
 
   # has_attached_file :picture,
