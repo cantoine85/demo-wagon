@@ -15,13 +15,11 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'omniauth-facebook'
-<<<<<<< HEAD
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip'
-=======
 gem 'bootstrap-datepicker-rails'
 gem 'geocoder'
->>>>>>> 92b10b2c3f75ec81cc05121f89eb81df2eeea0f4
+
 
 group :development, :test do
   gem 'binding_of_caller'
