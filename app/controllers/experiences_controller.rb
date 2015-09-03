@@ -7,6 +7,7 @@ before_action :find_categories, only: [:create]
 
   def show
     # Get experience from id params
+    params[:id] = 1
     @experience = Experience.find(params[:id])
 
   end
@@ -26,10 +27,7 @@ before_action :find_categories, only: [:create]
       @experience.token = GENERATE_TOKEN
       cookies[:temporary_exp_token] = @experience.token
     end
-    # Associer une catégorie à l'expérience
-    @categories.each do | category |
-      @experience.categories << category
-    end
+
     # Si l'expérience passe les validation, l'enregistrer dans la db
     # et rediriger sur la vue show de l'expérience
     if @experience.save
@@ -55,12 +53,12 @@ before_action :find_categories, only: [:create]
     params.require(:experience).permit(:title, :description, :startdate, :enddate, :address, :category)
   end
 
-  def find_categories
-    @categories = []
-    params[:experience][:category_ids].each do | category_id |
-      @categories << Category.find(category_id) unless category_id = ""
-    end
-  end
+  # def find_categories
+  #   @categories = []
+  #   params[:experience][:category_ids].each do | category_id |
+  #     @categories << Category.find(category_id) unless category_id = ""
+  #   end
+  # end
 
   def display_validate_past_experience
 
