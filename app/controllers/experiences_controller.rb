@@ -52,7 +52,7 @@ before_action :find_categories, only: [:create]
   private
 
   def experience_params
-    params.require(:experience).permit(:title, :description, :startdate, :enddate, :address, :category)
+    params.require(:experience).permit(:title, :description, :picture, :startdate, :enddate, :address, :category)
   end
 
   def find_categories
