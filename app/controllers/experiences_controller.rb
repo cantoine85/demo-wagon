@@ -5,13 +5,14 @@ before_action :find_categories, only: [:create]
 
   end
 
+  def show
+  end
 
   def new
     @experience = Experience.new
   end
 
   def create
-
     # Récupérer les paramètres de l'expérience créée
     @experience = Experience.new(experience_params)
     # Préciser la référence de l'expérience initiale
