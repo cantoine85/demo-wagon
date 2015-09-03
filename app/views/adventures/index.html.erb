@@ -1,0 +1,14 @@
+<h1 class="text-center">All your adventures</h1>
+<div class="text-center padded">
+  <%= link_to "Create a adventure", new_adventure_path, class: "btn btn-primary" %>
+</div>
+  <div class = "container">
+    <div class = "row" >
+      <% @adventures.each do |adventure| %>
+        <div class="col-xs-12 text-center">
+            <%= link_to adventure.title, adventure_path(adventure) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
