@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TODO</title>
+    <title>WOom, générateur d'expérience</title>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= csrf_meta_tags %>
+    <meta charset="utf-8"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   </head>
   <body>
-    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag "https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBQjQr8Hcq7-4yWBd3idXNT9syvpDDLky4" %>
@@ -17,9 +17,9 @@
 
     <%= javascript_include_tag "application" %>
 
-
-
     <%= yield(:after_js) %>
+
+    <%= render 'shared/navbar' %>
 
   </body>
 </html>

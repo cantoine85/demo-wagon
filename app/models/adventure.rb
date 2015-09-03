@@ -6,4 +6,6 @@ class Adventure < ActiveRecord::Base
   validates :title, presence: true
   validates :user, presence: true
 
+  CATEGORIES = ['voyage', 'balade', 'art', 'théâtre', 'opéra', 'musique', 'sport', 'évasion', 'spectacle', 'photographie']
+
 end
