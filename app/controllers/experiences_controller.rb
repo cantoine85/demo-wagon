@@ -8,6 +8,7 @@ before_action :find_categories, only: [:create]
   def show
     # Get experience from id params
     @experience = Experience.find(params[:id])
+
   end
 
   def new
