@@ -8,6 +8,10 @@ class Experience < ActiveRecord::Base
   belongs_to :inspirer, class_name: "User"
   belongs_to :adventure
 
+  # Validations
+  validates :adventure, presence:true
+  validates :actor, presence:true
+
   # paperclip picture
   # has_attached_file :picture,
   #   styles: { medium: "500x500>", thumb: "100x100>" }
