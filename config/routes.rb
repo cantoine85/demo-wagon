@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :experiences
 
+  namespace :account do
+    resources :experiences
+  end
+
   root to: 'experiences#index'
 
 
