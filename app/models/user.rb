@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  after_create :create_associated_profile
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
@@ -21,16 +20,10 @@ class User < ActiveRecord::Base
   end
 
   # Associations
-  has_one :profile, dependent: :destroy # A user has one profile
-  has_many :experiences, dependent: :destroy # A user has many experiences
+  has_many :adventures, dependent: :destroy # A user has many adventures
+  has_many :experiences, through: :adventures
+  has_many :lived_experiences, class_name: "Experience", foreign_key: :actor_id
+  has_many :relayed_experiences, class_name: "Experience", foreign_key: :inspirer_id
 
-  private
 
-  def create_associated_profile
-    Profile.create(
-      user: self,
-      first_name: first_name,
-      last_name: last_name ? last_name : nil
-    )
-  end
 end
