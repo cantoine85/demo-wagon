@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150902150352) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "color"
   end
 
   create_table "categories_experiences", id: false, force: :cascade do |t|
@@ -39,6 +40,10 @@ ActiveRecord::Schema.define(version: 20150902150352) do
     t.integer  "user_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
     t.float    "latitude"
     t.float    "longitude"
   end
