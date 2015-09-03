@@ -1,0 +1,71 @@
+<div class= "text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h3><%= @adventure.title %></h2>
+          <%#= image_tag @adventure.picture %>
+          <p><%= @adventure.category %></p>
+          <p><%= @adventure.description %></p>
+          <p><%= @adventure.address %></p>
+          <p><%= @adventure.start_date %></p>
+          <p><%= @adventure.end_date %></p>
+          <p><%= @adventure.duration %></p>
+      </div>
+    </div>
+   </div>
+    <%= link_to 'Edit', edit_adventure_path(@adventure) %>
+    <%= link_to 'list', adventures_path(@adventure) %>
+</div>
+
+<div id="map" style="width: 100%; height: 600px;"></div>
+
+<% content_for(:after_js) do %>
+  <script>
+    $(document).on('ready', function() {
+      handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function(){
+        markers = handler.addMarkers(<%= raw @markers.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+
+      // google.maps.event.addDomListener(window, 'load', function() {
+      //   initializeAutocomplete('user_input_autocomplete_address');
+      // });
+
+      // function initializeAutocomplete(id) {
+      //   var element = document.getElementById(id);
+      //   if (element) {
+      //     var autocomplete = new google.maps.places.Autocomplete(element, { types: ['geocode'] });
+      //     google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+      //   }
+      // }
+
+      // function onPlaceChanged() {
+      //   var place = this.getPlace();
+
+      //   // console.log(place);  // Uncomment this line to view the full object returned by Google API.
+
+      //   for (var i in place.address_components) {
+      //     var component = place.address_components[i];
+      //     for (var j in component.types) {  // Some types are ["country", "political"]
+      //       var type_element = document.getElementById(component.types[j]);
+      //       if (type_element) {
+      //         type_element.value = component.long_name;
+      //       }
+      //     }
+      //   }
+      // }
+
+    })
+  </script>
+<% end %>
+
+<%# content_for(:after_js) do %>
+  <%#= javascript_tag do %>
+    <!-- $(document).ready(function() {
+      var coord = <%= raw @adventure_coordinates %>;
+      alert('Adventure coordinates are ' + coord.lat + ', ' + coord.lng');
+    }); -->
+  <%# end %>
+<%# end %>
