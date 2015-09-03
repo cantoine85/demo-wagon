@@ -5,5 +5,4 @@ class Category < ActiveRecord::Base
   has_many :experiences, through: :categories_experiences
 
   validates :name, uniqueness: true, presence: true
-  validates :color, uniqueness: true, presence: true
 end
