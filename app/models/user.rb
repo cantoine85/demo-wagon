@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  after_create :create_associated_profile
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable,
-         :omniauthable, omniauth_providers: [:facebook] #, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,
+         :omniauthable, omniauth_providers: [:facebook]
 
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -23,8 +24,13 @@ class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy # A user has one profile
   has_many :experiences, dependent: :destroy # A user has many experiences
 
-  # Validations
-  validates :email, presence:true, uniqueness:true
-  validates :password, presence:true
+  private
 
+  def create_associated_profile
+    Profile.create(
+      user: self,
+      first_name: first_name,
+      last_name: last_name ? last_name : nil
+    )
+  end
 end

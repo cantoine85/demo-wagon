@@ -6,6 +6,9 @@ before_action :find_categories, only: [:create]
   end
 
   def show
+    # Get experience from id params
+    @experience = Experience.find(params[:id])
+
   end
 
   def new
@@ -15,8 +18,7 @@ before_action :find_categories, only: [:create]
   def create
     # Récupérer les paramètres de l'expérience créée
     @experience = Experience.new(experience_params)
-    # Préciser la référence de l'expérience initiale
-    @experience.author_experience =
+
     # Associer un utilisateur à l'expérience
     if user_signed_in?
       @experience.user = current_user
@@ -31,6 +33,8 @@ before_action :find_categories, only: [:create]
     # Si l'expérience passe les validation, l'enregistrer dans la db
     # et rediriger sur la vue show de l'expérience
     if @experience.save
+      # Préciser la référence de l'expérience initiale
+      @experience.author_experience = @experience.id
       redirect_to experience_path(@experience)
     else
       render :new # renvoie le formulaire de création de l'expérience
@@ -59,6 +63,7 @@ before_action :find_categories, only: [:create]
   end
 
   def display_validate_past_experience
+
   end
 
 end
