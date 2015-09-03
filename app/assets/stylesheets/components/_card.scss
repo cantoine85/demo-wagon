@@ -1,18 +1,55 @@
 .card {
 
-  &-title {
+  position: relative;
+  height: 250px;
+  width:100%;
+  max-width: 250px;
+  margin: auto;
+  background-color: #0F243F;
+  border: 1px solid #0F243F;
 
+  h1 {
+    font-size: 15px;
+    color: #0F243F;
+    margin: 0px;
+    padding:5px;
   }
 
-  &-image {
+  h2 {
+    font-size: 15px;
+    color: #0F243F;
+  }
 
+  &-title {
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
   }
 
   &-user {
+    background-color: white;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    display:flex;
+    justify-content: center;
+    item-align: center;
 
+    h2 {
+
+    }
+
+    &-avatar {
+      height: 20px;
+      width:20px;
+      background-color:#0F243F;
+      border-radius: 50%;
+    }
   }
 
-  &-
 
   // position: relative;
   // height: 175px;
