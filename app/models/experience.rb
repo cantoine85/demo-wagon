@@ -9,8 +9,14 @@ class Experience < ActiveRecord::Base
   belongs_to :adventure
 
   # Validations
-  validates :adventure, presence:true
-  validates :actor, presence:true
+  validates :adventure, presence: true
+  validates :actor, presence: true
+  validates :inspirer, presence: true
+
+  #Get info from adventure
+  def title
+    adventure.title
+  end
 
   # paperclip picture
   # has_attached_file :picture,
