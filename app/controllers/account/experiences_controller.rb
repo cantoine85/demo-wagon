@@ -10,7 +10,7 @@ module Account
     end
 
     def index
-
+      @experiences = Experience.where(actor_id: current_user)
     end
 
     def detail
@@ -21,12 +21,7 @@ module Account
   end
 end
 
-# class Account::CategoriesController < ApplicationController
-#   # before_action :find_categories, only: [ :index ]
 
-#   def index
-#     #TODO
-#   end
 
 #   private
 
