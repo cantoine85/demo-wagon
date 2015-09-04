@@ -11,7 +11,8 @@ User.destroy_all
 Category.destroy_all
 
 # Seed for categories
-names = ["sport", "balade", "art", "littérature", "théâtre", "musique", "cinéma", "voyage"]
+names = [ "cinéma", "balade", "sport", "art", "voyage" ]
+
 
 names.each do |name|
   cat = Category.new(name: name)
@@ -80,7 +81,7 @@ experience_categories = [ "cinéma", "balade", "sport", "art", "voyage" ].revers
 # Create experiences
 experiences.each_with_index do |experience, index|
   e = Experience.new(experience)
-  e.categories << Category.find_by_name(experience_categories[index])
+  #e.categories << Category.find_by_name(experience_categories[index])
   if e.save
     puts "Saveeeeeeed !!!!!"
   else
