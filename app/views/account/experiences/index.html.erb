@@ -1,15 +1,19 @@
 
 <h2><%= current_user.first_name%></h2>
 
+<% if @experiences != [] %>
+<span><%=@message %></span>
+<% else %>
+  <ul>
+    <% @experiences.each do |experience| %>
+      <% (@categories ||= []) << experience.adventure.category %>
+    <% end %>
+      <li>
+        <%= @categories.uniq %>
+      </li>
+  </ul>
+<% end %>
 
-<ul>
-  <% @experiences.each do |experience| %>
-    <% (@categories ||= []) << experience.adventure.category %>
-  <% end %>
-    <li>
-      <%= @categories.uniq %>
-    </li>
-</ul>
 
 
 
