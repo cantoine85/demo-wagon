@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :experiences
   resources :adventures
 
-  root to: 'experiences#show'
+  root to: 'pages#home'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
