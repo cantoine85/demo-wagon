@@ -6,30 +6,32 @@ class ExperiencesController < ApplicationController
   end
 
   def show
-    # Get experience from id params
+    # 1 - Get experience from id params
     @experience = Experience.find(params[:id])
 
   end
 
   def create
-    # Get experience from your inspirer
+
+    # 1 - Get experience from your inspirer
     experience = Experience.find(params[:experience_id])
     adventure = Adventure.find(experience.adventure)
-    # Get inspirer (if actor nil, get creator)
+
+    # 2 - Get inspirer (if actor nil, get creator)
     if experience.actor
       inspirer = experience.actor
     else
       inspirer = experience.inspirer
     end
-    # Create your own experience
+
+    # 3 - Create your own experience
     # TO DO after migration done -> status in string :  done: params[:status]
     new_experience = Experience.new(adventure: adventure, actor:current_user, inspirer: inspirer)
 
-    # Save your own experience and redirect to aleatory experience
+    # 4 - Save your own experience and redirect to aleatory experience
     if new_experience.save
       redirect_to experience_path(experience.id + 1)
     end
-
   end
 
   # def edit
@@ -46,9 +48,9 @@ class ExperiencesController < ApplicationController
   #     @categories << Category.find(category_id) unless category_id = ""
   #   end
   # end
-
-  def display_validate_past_experience
-
-  end
+#
+  # def display_validate_past_experience
+#
+  # end
 
 end
