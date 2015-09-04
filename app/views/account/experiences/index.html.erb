@@ -8,14 +8,14 @@
     <% end %>
     <% categories = @categories.uniq %>
     <% categories.each do |category| %>
-      <li>You have experiences of <%= category%></li>
+      <li>You have <%=  @experiences.select {|e| e.category == category }.size %> experiences of <%= category%></li>
     <% end %>
   </ul>
 <% else %>
   <span><%=@message %></span>
 <% end %>
 
-
+<!-- count = x.select {|e| e == 3}.size -->
 
 
 
