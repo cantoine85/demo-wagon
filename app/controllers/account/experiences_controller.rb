@@ -10,7 +10,7 @@ module Account
     end
 
     def index
-      @experiences = Experience.where(actor_id: current_user)
+      @experiences = current_user.experiences
     end
 
     def detail
