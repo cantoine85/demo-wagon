@@ -5,7 +5,7 @@
             <%= f.error_notification %>
             <%= f.input :title %>
             <%= f.input :category, as: :select, collection: Adventure::CATEGORIES, prompt: "choisissez une catégorie" %>
-            <%#= f.input :picture %>
+            <%= f.input :picture %>
             <%= f.input :description %>
             <%= f.input :address %>
             <%= f.input :start_date, as: :string, input_html: {class: 'datetime'}%>

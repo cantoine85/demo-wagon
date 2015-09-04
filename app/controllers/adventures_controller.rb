@@ -22,22 +22,25 @@ class AdventuresController < ApplicationController
   def create
     # Récupérer les paramètres de l'aventure créée
     @adventure = Adventure.new(adventure_params)
-    @experience = Experience.new(adventure: @adventure, inspirer: @adventure.user)
+    @adventure.user = current_user
+    @experience = Experience.new(adventure: @adventure, inspirer: current_user)
 
-    # Associer un utilisateur à l'aventure
-    if user_signed_in?
-      @adventure.user = current_user
-    else
-      @adventure.token = GENERATE_TOKEN
-      cookies[:temporary_exp_token] = @adventure.token
-    end
+    # # Associer un utilisateur à l'aventure
+    # if user_signed_in?
+    #   @adventure.user = current_user
+    # else
+    #   @adventure.token = GENERATE_TOKEN
+    #   cookies[:temporary_exp_token] = @adventure.token
+    # end
 
     # Si l'expérience passe les validation, l'enregistrer dans la db
     # et rediriger sur la vue show de l'expérience
     if @adventure.save
-      redirect_to experience_path(@experience)
+      if @experience.save
+        redirect_to experience_path(@experience)
+      end
     else
-      render :new # renvoie le formulaire de création de l'expérience
+      render :new # renvoie le formulaire de création de l'aventure
     end
   end
 
