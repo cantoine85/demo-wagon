@@ -2,8 +2,6 @@
 <h2><%= current_user.first_name%></h2>
 
 <% if @experiences != [] %>
-<span><%=@message %></span>
-<% else %>
   <ul>
     <% @experiences.each do |experience| %>
       <% (@categories ||= []) << experience.adventure.category %>
@@ -12,6 +10,8 @@
         <%= @categories.uniq %>
       </li>
   </ul>
+<% else %>
+  <span><%=@message %></span>
 <% end %>
 
 
