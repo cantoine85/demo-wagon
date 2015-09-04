@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   resources :experiences
   resources :adventures
 
+  root to: 'pages#home'
+
   namespace :account do
     resources :experiences
   end
-
-  root to: 'experiences#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
