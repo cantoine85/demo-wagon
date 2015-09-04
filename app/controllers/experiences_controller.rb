@@ -25,23 +25,11 @@ class ExperiencesController < ApplicationController
     # TO DO after migration done -> status in string :  done: params[:status]
     new_experience = Experience.new(adventure: adventure, actor:current_user, inspirer: inspirer)
 
-    # Associer un utilisateur à l'expérience
-    if user_signed_in?
-      @experience.user = current_user
-    else
-      @experience.token = GENERATE_TOKEN
-      cookies[:temporary_exp_token] = @experience.token
+    # Save your own experience and redirect to aleatory experience
+    if new_experience.save
+      redirect_to experience_path(experience.id + 1)
     end
 
-    # Si l'expérience passe les validation, l'enregistrer dans la db
-    # et rediriger sur la vue show de l'expérience
-    if @experience.save
-      # Préciser la référence de l'expérience initiale
-      @experience.author_experience = @experience.id
-      redirect_to experience_path(@experience)
-    else
-      render :new # renvoie le formulaire de création de l'expérience
-    end
   end
 
   # def edit

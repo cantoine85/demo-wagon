@@ -6,7 +6,8 @@
   </div>
   <div class="card-user">
     <% if experience.actor %>
-      <span>Inspired by <%= experience.actor.first_name %>
+      <span>Inspired by <%= experience.actor.first_name %> <br>
+      <span>Created by <%= experience.adventure.user.first_name %></span>
       </span>
 <!--       <div class="card-user-avatar">
       </div> -->
