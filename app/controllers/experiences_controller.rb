@@ -12,8 +12,18 @@ class ExperiencesController < ApplicationController
   end
 
   def create
-    # Récupérer les paramètres de l'expérience créée
-    new_experience = Experience.new()
+    # Get experience from your inspirer
+    experience = Experience.find(params[:experience_id])
+    adventure = Adventure.find(experience.adventure)
+    # Get inspirer (if actor nil, get creator)
+    if experience.actor
+      inspirer = experience.actor
+    else
+      inspirer = experience.inspirer
+    end
+    # Create your own experience
+    # TO DO after migration done -> status in string :  done: params[:status]
+    new_experience = Experience.new(adventure: adventure, actor:current_user, inspirer: inspirer)
 
     # Associer un utilisateur à l'expérience
     if user_signed_in?
