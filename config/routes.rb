@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  resources :experiences
-  resources :adventures
 
+  resources :experiences, only: [:show]
+  resources :adventures
   root to: 'pages#home'
 
   namespace :account do

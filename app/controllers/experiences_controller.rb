@@ -1,5 +1,5 @@
 class ExperiencesController < ApplicationController
-before_action :find_categories, only: [:create]
+#before_action :find_categories, only: [:create]
 
   def index
 
@@ -7,18 +7,13 @@ before_action :find_categories, only: [:create]
 
   def show
     # Get experience from id params
-    params[:id] = 1
     @experience = Experience.find(params[:id])
 
   end
 
-  def new
-    @experience = Experience.new
-  end
-
   def create
     # Récupérer les paramètres de l'expérience créée
-    @experience = Experience.new(experience_params)
+    new_experience = Experience.new()
 
     # Associer un utilisateur à l'expérience
     if user_signed_in?
@@ -46,12 +41,6 @@ before_action :find_categories, only: [:create]
   #     display_classical_edit_form
   #   end
   # end
-
-  private
-
-  def experience_params
-    params.require(:experience).permit(:title, :description, :picture, :startdate, :enddate, :address, :category)
-  end
 
   # def find_categories
   #   @categories = []

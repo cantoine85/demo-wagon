@@ -10,12 +10,15 @@ class Experience < ActiveRecord::Base
 
   # Validations
   validates :adventure, presence: true
-  validates :actor, presence: true
   validates :inspirer, presence: true
 
   #Get info from adventure
   def title
     adventure.title
+  end
+
+  def category
+    adventure.category
   end
 
   # paperclip picture

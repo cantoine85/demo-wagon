@@ -1,10 +1,19 @@
 <div class="card">
   <div class="card-title">
+    <%= experience.title %>
   </div>
   <div class="card-image" style="background-image:url('images/home.jpg')">
   </div>
   <div class="card-user">
-    <span>Inspired by</span>
-    <div class="card-user-avatar"></div>
+    <% if experience.actor %>
+      <span>Inspired by <%= experience.actor.first_name %>
+      </span>
+<!--       <div class="card-user-avatar">
+      </div> -->
+    <% else %>
+      <span>Created by <%= experience.inspirer.first_name %></span>
+<!--       <div class="card-user-avatar">
+      </div> -->
+    <% end %>
   </div>
 </div>
