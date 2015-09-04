@@ -8,32 +8,28 @@
   background-color: #0F243F;
   border: 1px solid #0F243F;
 
-  h1 {
+  &-title {
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: white;
     font-size: 15px;
     color: #0F243F;
     margin: 0px;
     padding:5px;
   }
 
-  h2 {
-    font-size: 15px;
-    color: #0F243F;
-  }
-
-  &-title {
-    background-color: white;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-  }
-
   &-user {
-    background-color: white;
+    height: 50px;
     position: absolute;
     bottom: 0px;
     left: 0px;
     right: 0px;
+    background-color: white;
+    font-size: 15px;
+    color: #0F243F;
     display:flex;
     justify-content: center;
     item-align: center;

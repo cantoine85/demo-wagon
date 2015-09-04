@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  resources :experiences
-  resources :adventures
 
+  resources :experiences, only: [:show, :create]
+  resources :adventures
   root to: 'pages#home'
+
+  namespace :account do
+    resources :experiences
+  end
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

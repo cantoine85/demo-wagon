@@ -11,7 +11,8 @@ User.destroy_all
 Category.destroy_all
 
 # Seed for categories
-names = ["sport", "balade", "art", "littérature", "théâtre", "musique", "cinéma", "voyage"]
+names = [ "cinéma", "balade", "sport", "art", "voyage" ]
+
 
 names.each do |name|
   cat = Category.new(name: name)
@@ -120,6 +121,7 @@ adventures = [
 # Create experiences
 adventures.each_with_index do |adventure, index|
   e = Adventure.new(adventure)
+
   if e.save
     puts e.title
   else
