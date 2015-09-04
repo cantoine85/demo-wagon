@@ -12,15 +12,20 @@
   <div class="row">
     <ul class="list-inline large ">
       <li>
-        <i class="fa fa-times padding-horizontal"></i>
+        <%=link_to experiences_path(experience: @experience, status: "not interested"), method: :post do %>
+          <i class="fa fa-times padding-horizontal"></i>
+        <% end %>
       </li>
       <li>
-         <i class="fa fa-heart padding-horizontal"></i>
+        <%=link_to experiences_path(experience: @experience, status: "interested"), method: :post do %>
+          <i class="fa fa-heart padding-horizontal"></i>
+        <% end %>
       </li>
       <li>
-        <i class="fa fa-check padding-horizontal"></i>
+        <%=link_to experiences_path(experience: @experience, status: "done"), method: :post do %>
+          <i class="fa fa-check padding-horizontal"></i>
+        <% end %>
       </li>
     </ul>
   </div>
 </div>
-
