@@ -107,25 +107,18 @@ adventures = [
 ]
 
 
-# Create experiences
+# Create adventure
 adventures.each_with_index do |adventure, index|
   e = Adventure.new(adventure)
 
   if e.save
-    puts e.title
+    e.save
+    exp = Experience.new(adventure: e, inspirer_id: e.user_id)
+    exp.save
   else
     puts 'adventure not valid'
   end
 end
-
-# Add categories to experiences
-# Experience.last.categories << Category.find_by(name: "cinéma")
-# Experience.last(2).first.categories << Category.find_by(name: "balade")
-# Experience.last(3).first.categories << Category.find_by(name: "sport")
-# Experience.last(4).first.categories << Category.find_by(name: "art")
-# Experience.first.categories << Category.find_by(name: "voyage")
-
-# Add user_id to experience
 
 
 

@@ -10,7 +10,12 @@ module Account
     end
 
     def index
-      @experiences = current_user.experiences
+      if current_user.experiences != []
+        @experiences = current_user.experiences
+      else
+        @message = "Vous n'avez pas encore d'expériences dans votre vision board"
+      end
+
     end
 
     def detail
