@@ -1,4 +1,16 @@
-<!-- TODO
-vue 4 du ppt
- -->
-<h1>TODO</h1>
+
+<h2><%= current_user.first_name%></h2>
+
+
+<ul>
+  <% @experiences.each do |experience| %>
+    <% (@categories ||= []) << experience.adventure.category %>
+  <% end %>
+    <li>
+      <%= @categories.uniq %>
+    </li>
+</ul>
+
+
+
+

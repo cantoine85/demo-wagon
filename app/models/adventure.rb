@@ -9,8 +9,10 @@ class Adventure < ActiveRecord::Base
   validates :title, presence: true
   validates :user, presence: true
 
-  # Create global varibale
-  CATEGORIES = ['voyage', 'balade', 'art', 'théâtre', 'opéra', 'musique', 'sport', 'évasion', 'spectacle', 'photographie']
+
+  # Create global variable
+  CATEGORIES = ['voyage', 'balade', 'fun', 'la vie en rose', 'plaisir', 'cinéma', 'art', 'théâtre', 'opéra', 'musique', 'sport', 'évasion', 'spectacle', 'concert', 'photographie', 'sensations']
+
 
   # Add paperclip picture
   has_attached_file :picture,
