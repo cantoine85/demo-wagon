@@ -1,20 +1,46 @@
 <div class="card">
-  <div class="card-title">
-    <%= experience.title %>
-  </div>
-  <div class="card-image" style="background-image:url('images/home.jpg')">
-  </div>
-  <div class="card-user">
-    <% if experience.actor %>
-      <span>Inspired by <%= experience.actor.first_name %> <br>
-      <span>Created by <%= experience.adventure.user.first_name %></span>
-      </span>
-<!--       <div class="card-user-avatar">
-      </div> -->
-    <% else %>
-      <span>Created by <%= experience.inspirer.first_name %></span>
-<!--       <div class="card-user-avatar">
-      </div> -->
-    <% end %>
+      <div class="card-title">
+        <%= experience.title %>
+      </div>
+      <div class="experience-card-image-block">
+        <% if experience.adventure.picture_file_name %>
+          <div class= 'experience-card-image' style="background-image: url(<%= experience.adventure.picture.url %>);">
+          </div>
+
+        <% end %>
+      </div>
+      <div class="card-user">
+        <% if experience.actor %>
+          <span>Inspired by <%= experience.actor.first_name %> <br>
+          <span>Created by <%= experience.adventure.user.first_name %></span>
+          </span>
+    <!--       <div class="card-user-avatar">
+          </div> -->
+        <% else %>
+          <span>Created by <%= experience.inspirer.first_name %></span>
+    <!--       <div class="card-user-avatar">
+          </div> -->
+        <% end %>
+      </div>
+
+
+  <div>
+    <ul class="list-inline large ">
+      <li>
+        <%=link_to experiences_path(experience_id: @experience, status: "not interested"), method: :post do %>
+          <i class="fa fa-times padding-horizontal"></i>
+        <% end %>
+      </li>
+      <li>
+        <%=link_to experiences_path(experience_id: @experience, status: "interested"), method: :post do %>
+          <i class="fa fa-heart padding-horizontal"></i>
+        <% end %>
+      </li>
+      <li>
+        <%=link_to experiences_path(experience_id: @experience, status: "done"), method: :post do %>
+          <i class="fa fa-check padding-horizontal"></i>
+        <% end %>
+      </li>
+    </ul>
   </div>
 </div>
