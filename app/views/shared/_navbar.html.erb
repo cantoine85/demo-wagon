@@ -2,11 +2,11 @@
   <div class="container navbar-wagon-container">
 
     <a href="">
-      <%= image_tag "logo.png" %>
+      <%= image_tag "Woom_logo_white.png" %>
     </a>
 
     <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search for featured stuff">
+      <input type="text" class="navbar-wagon-search-input" placeholder="exposition Monet">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
@@ -26,17 +26,17 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
+                <i class="fa fa-user"></i> <%= t ".profile", default: "Profil" %>
               <% end %>
             </li>
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
+                <i class="fa fa-home"></i>  <%= t ".profile", default: "Accueil" %>
               <% end %>
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
+                <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "déconnexion" %>
               <% end %>
             </li>
           </ul>
@@ -46,6 +46,6 @@
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
     <hr>
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to t(".top_call_to_action", default: "nouvelle expérience"), new_adventure_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 </nav>
