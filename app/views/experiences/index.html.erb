@@ -1,1 +1,14 @@
-<h1> YEAHHHHH INDEX EXPERIENCES</h1>
+<h1 class="text-center">Toutes vos expériences</h1>
+<div class="text-center padded">
+  <%= link_to "Créez une expérience", new_adventure_path, class: "btn btn-primary" %>
+</div>
+  <div class = "container">
+    <div class = "row" >
+      <% @experiences.each do |experience| %>
+        <div class="col-xs-12 text-center">
+            <%= link_to experience.title, experiences_path(experience) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+

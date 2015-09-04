@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  resources :experiences, only: [:show, :create]
+  resources :experiences, only: [:show, :create, :index]
   resources :adventures
   root to: 'pages#home'
 
