@@ -2,9 +2,10 @@
 
   position: relative;
   // height: 330px;
+  display: flex;
+  flex-flow:column;
   width:100%;
-  max-width: 250px;
-  margin: auto;
+  margin: 5px;
   box-shadow: 1px 1px 1px #888888;
 
   &-title {
@@ -19,13 +20,36 @@
   &-block {
     height: 250px;
     &-image {
+      position:relative;
       height: 100%;
       width: 100%;
       background-size: cover;
       // vertical-align: center;
     }
-  }
+    &-buttons {
+      position:absolute;
+      bottom: 0px;
+      right: 0px;
+      left: 0px;
+      background-color:rgba(0, 0, 0, 0.4);
+      li {
+        padding: 0px 18px;
+      }
 
+      .fa-times {
+        color: $blue;
+      }
+
+      .fa-heart {
+        color: $red;
+      }
+
+      .fa-check{
+        color: $green;
+      }
+    }
+
+  }
   &-user {
     background-color: white;
     font-size: 15px;
@@ -41,9 +65,27 @@
       background-color:#0F243F;
       border-radius: 50%;
     }
-    li {
-      padding: 0px 18px;
+
+
+
+  }
+}
+
+.experience-details-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+
+    i {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid $red;
+      background-color: white;
+      border-radius: 50%;
+
     }
+
   }
 
 
@@ -105,4 +147,3 @@
   //     opacity: 0.1;
   //   }
   // }
-}

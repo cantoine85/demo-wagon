@@ -1,19 +1,104 @@
 
-<!-- Experience details banner -->
-<div class="experience-details-banner text-center" style="background-image: url(<%= @experience.adventure.picture.url %>);">
+
+<!-- BANNER -->
+<div class="experience-details-banner" style="background-image: url(<%= @experience.adventure.picture.url %>);">
   <div class="experience-details-banner-content">
     <h1><%= @experience.title %></h1>
-    <p>inspired by <%= @experience.inspirer.first_name %></p>
+    <p>inspired by <%= image_tag @experience.inspirer.picture%></p>
   </div>
   <div class="experience-details-banner-shadow"></div>
   <div class="experience-details-banner-category">Voyage</div>
 </div>
 
-<div class="container">
-  <div class="row">
-
+<!-- INFORMATIONS DETAILS : FLEX BOX -->
+<div class="experience-details-card">
+  <div class="experience-details-card-item">
+    <i class="fa fa-calendar"></i>
+    <span><%= @experience.adventure.start_date %></span>
+  </div>
+  <div class="experience-details-card-item">
+    <i class="fa fa-calendar"></i>
+    <span><%= @experience.adventure.end_date %></span>
+  </div>
+  <div class="experience-details-card-item">
+    <i class="fa fa-hourglass-start"></i>
+    <span><%= @experience.adventure.duration %></span>
+  </div>
+  <div class="experience-details-card-item">
+    <span>
+      <%@experience.adventure.description %>
+    </span>
+  </div>
+  <div class="experience-details-card-item">
+    <span><%= @experience.adventure.address %></span>
   </div>
 </div>
+
+<!-- INFORMATION DETAILS : TABLES -->
+<!-- <div class="experience-details-card">
+  <table>
+    <tr>
+      <td><i class="fa fa-calendar"></i></td>
+      <td>Du</td>
+    </tr>
+    <tr>
+      <td><i class="fa fa-calendar"></i></td>
+      <td>Au</td>
+    </tr>
+    <tr>
+      <td><i class="fa fa-hourglass-start"></i></td>
+      <td>Durée</td>
+    </tr>
+  </table>
+</div> -->
+
+
+<!-- INFORMATION DETAILS : BOOTSTRAP RESPONSIVE GRID -->
+<!-- <div class="experience-details-card"> -->
+<!--   <div class="container">
+    <div class="row">
+      <div class="col-xs-1">
+        <div class="experience-details-card-item">
+          <i class="fa fa-calendar"></i>
+        </div>
+      </div>
+      <div class="col-xs-11">
+        <div class="experience-details-card-item">
+          From :  <%= @experience.adventure.start_date %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="experience-details-card-item">
+          <i class="fa fa-calendar"></i>
+          To : <%= @experience.adventure.end_date %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="experience-details-card-item">
+          <i class="fa fa-hourglass-start"></i>
+          Duration : <%= @experience.adventure.duration %> heures
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12" >
+        <div class="experience-details-card-item">
+          <i class="fa fa-info"></i>
+          Description : <%= @experience.adventure.description%>
+        </div>
+      </div>
+    </div>
+  </div> -->
+<!-- </div> -->
+
+
+
+
+
 
 
 

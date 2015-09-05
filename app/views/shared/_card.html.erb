@@ -11,12 +11,32 @@
 
         <%=link_to details_experience_path(id: experience), class:'image' do %>
           <div class= 'experience-card-block-image' style="background-image: url(<%= experience.adventure.picture.url %>);">
-
-      </div>
+            <!-- Experience buttons -->
+            <div class="experience-card-block-buttons">
+              <ul class="list-inline large ">
+                <li>
+                  <%=link_to experiences_path(id: @experience, status: "not interested"), method: :post do %>
+                    <i class="fa fa-times padding-horizontal"></i>
+                  <% end %>
+                </li>
+                <li class="heart">
+                  <%=link_to experiences_path(id: @experience, status: "interested"), method: :post do %>
+                    <i class="fa fa-heart padding-horizontal"></i>
+                  <% end %>
+                </li>
+                <li class="check">
+                  <%=link_to experiences_path(id: @experience, status: "done"), method: :post do %>
+                    <i class="fa fa-check padding-horizontal"></i>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+        </div>
       <% end %>
-
     <% end %>
   </div>
+
+
 
   <!-- Inspired By -->
   <div class="experience-card-user">
@@ -33,25 +53,5 @@
     <% end %>
   </div>
 
-  <!-- Experience buttons -->
-  <div>
-    <ul class="list-inline large ">
-      <li>
-        <%=link_to experiences_path(id: @experience, status: "not interested"), method: :post do %>
-          <i class="fa fa-times padding-horizontal"></i>
-        <% end %>
-      </li>
-      <li>
-        <%=link_to experiences_path(id: @experience, status: "interested"), method: :post do %>
-          <i class="fa fa-heart padding-horizontal"></i>
-        <% end %>
-      </li>
-      <li>
-        <%=link_to experiences_path(id: @experience, status: "done"), method: :post do %>
-          <i class="fa fa-check padding-horizontal"></i>
-        <% end %>
-      </li>
-    </ul>
-  </div>
 
 </div>
