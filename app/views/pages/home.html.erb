@@ -1,22 +1,11 @@
-<div class="banner text-center ">
-  <div class="banner-shadow"></div>
-    <div class="banner-content ">
-        <h1>VIVEZ VOS EXPERIENCES</h1>
-        <P>créez vos to-do lists d'expériences et gardez en mémoire les expériences marquantes de votre vie</P>
-        <br>
-        <%#= link_to 'créez une nouvelle expérience', new_adventure_path, class:"btn btn-danger btn-lg" %>
-        <br>
-        <br>
-        <%= link_to 'inscription', new_user_registration_path, class:"btn btn-danger btn-lg" %>
-        <%= link_to 'connection', new_user_session_path, class:"btn btn-danger btn-lg" %>
-        <%= link_to 'découvrir', experience_path(id:10), class:"btn btn-danger btn-lg" %>
-      <br>
-      <br>
-      <br>
-      <%#= link_to 'liste des expériences', experiences_path, class:"btn btn-danger btn-lg"%>
+<div class="home-banner text-center ">
+  <div class="home-banner-shadow"></div>
+    <div class="home-banner-content ">
+      <h1>Vivez vos expériences</h1>
+      <p>créez vos to-do lists d'expériences et gardez en mémoire les expériences marquantes de votre vie</p>
+        <%= link_to 'Générer des expériences aléatoires', experience_path(id:10), class:"btn btn-danger btn-lg" %>
     </div>
   </div>
-
 </div>
 
 <script>

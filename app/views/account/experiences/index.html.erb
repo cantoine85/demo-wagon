@@ -1,18 +1,23 @@
 
 <h2><%= current_user.first_name%></h2>
 
-<% if @experiences != [] %>
+<!-- If current user has experiences -->
+<% if @experiences.present? %>
   <ul>
+    <!-- count = x.select {|e| e == 3}.size -->
     <% @experiences.each do |experience| %>
       <% (@categories ||= []) << experience.adventure.category %>
     <% end %>
     <% categories = @categories.uniq %>
     <% categories.each do |category| %>
-      <li>You have <%=  @experiences.select {|e| e.category == category }.size %> experiences of <%= category%></li>
+      <li>
+        You have <%=  @experiences.select {|e| e.category == category }.size %> experiences of <%= category%>
+      </li>
     <% end %>
   </ul>
+ <!-- If current user has no experiences yet, display message -->
 <% else %>
-  <span><%=@message %></span>
+  <span>Vous n'avez pas encore d'expériences dans votre vision board</span>
 <% end %>
 
 <!-- count = x.select {|e| e == 3}.size -->

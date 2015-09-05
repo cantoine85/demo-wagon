@@ -1,35 +1,48 @@
-.card {
+.experience-card {
 
   position: relative;
-  height: 330px;
+  display: flex;
+  flex-flow:column;
   width:100%;
-  max-width: 250px;
-  margin: auto;
-  background-color: #0F243F;
-  border: 1px solid rgb(150, 150, 150);
+  margin: 5px;
   box-shadow: 1px 1px 1px #888888;
 
   &-title {
-    height: 30px;
-    background-color: white;
+    vertical-align: center;
     font-size: 15px;
-    color: #0F243F;
     margin: 0px;
-    padding:5px;
+    padding:12px;
+    background-color: white;
+    color: #0F243F;
+  }
+
+  &-block {
+    height: 250px;
+    position: relative;
+    &-link {
+      position:absolute;
+      bottom: 0px;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      background-size: cover;
+    }
+
+    &-status {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
   }
 
   &-user {
-    height: 50px;
     background-color: white;
     font-size: 15px;
     color: #0F243F;
     display:flex;
     justify-content: center;
     item-align: center;
-
-    h2 {
-
-    }
+    padding: 12px;
 
     &-avatar {
       height: 20px;
@@ -37,21 +50,30 @@
       background-color:#0F243F;
       border-radius: 50%;
     }
-    li {
-      padding: 0px 18px;
+  }
+}
+
+.experience-details-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: left;
+    padding: 10px;
+
+    i {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid $red;
+      background-color: white;
+      border-radius: 50%;
+
     }
-  }
-  experience-card-image-block {
-    height: 250px;
-  }
-  .experience-card-image {
-    height: 200px;
 
-    background-size: cover;
-    vertical-align: center;
   }
 
 
+
+  // border: 1px solid rgb(150, 150, 150);
   // position: relative;
   // height: 175px;
   // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -108,4 +130,3 @@
   //     opacity: 0.1;
   //   }
   // }
-}
