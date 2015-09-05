@@ -1,0 +1,20 @@
+<!-- Experience board buttons -->
+
+<ul class="list-inline large">
+  <li>
+    <%=link_to experiences_path(id: experience, status: "not interested"), method: :post do %>
+      <i class="fa fa-times padding-horizontal"></i>
+    <% end %>
+  </li>
+  <li class="heart">
+    <%=link_to experiences_path(id: experience, status: "interested"), method: :post do %>
+      <i class="fa fa-heart padding-horizontal"></i>
+    <% end %>
+  </li>
+  <li class="check">
+    <%=link_to experiences_path(id: experience, status: "done"), method: :post do %>
+      <i class="fa fa-check padding-horizontal"></i>
+    <% end %>
+  </li>
+</ul>
+

@@ -5,29 +5,58 @@
  * ------------------------------------- */
 
 // Titles
-
 h1 {
-  font-size: 28px;
-  padding: 20px;
-  margin: 0px;
-}
 
+  font-size: 28px;
+  padding: 60px;
+  margin: 0px;
+  margin-bottom: 15px;
+}
+.box-red {
+  box-shadow: 1px 1px 1px #8C8787;
+  background-color:$red;
+  color:white;
+}
 h2 {
   font-size: 18px;
   margin: 0px;
 }
 
-// Paddings
-.padded {
-  padding-top: 20px;
-  padding-bottom: 20px;
+// Icons
+.fa-times {
+  color: $blue;
+}
+.fa-heart {
+  color: $red;
+}
+.fa-check{
+  color: $green;
 }
 
+// Bootstrap fixings
+.padding-0 {
+  padding: 0px;
+}
+
+// Positions
+
+.bottom-fit {
+  position:absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+
+
+// Paddings
+.padded {
+  padding-bottom: 20px;
+}
 .padding-horizontal-18 {
   padding-right: 18px;
   padding-left: 18px;
 }
-
 .margin-bottom-74 {
   margin-bottom: 74px;
 }
@@ -35,6 +64,7 @@ h2 {
 .large {
   font-size: $large-size;
 }
+
 // Backgrounds
 .bg-text {
   background: #4a4a4a;

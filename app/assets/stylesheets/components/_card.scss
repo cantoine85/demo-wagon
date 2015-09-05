@@ -1,7 +1,6 @@
 .experience-card {
 
   position: relative;
-  // height: 330px;
   display: flex;
   flex-flow:column;
   width:100%;
@@ -19,37 +18,23 @@
 
   &-block {
     height: 250px;
-    &-image {
-      position:relative;
-      height: 100%;
-      width: 100%;
-      background-size: cover;
-      // vertical-align: center;
-    }
-    &-buttons {
+    position: relative;
+    &-link {
       position:absolute;
       bottom: 0px;
-      right: 0px;
+      top: 0px;
       left: 0px;
-      background-color:rgba(0, 0, 0, 0.4);
-      li {
-        padding: 0px 18px;
-      }
-
-      .fa-times {
-        color: $blue;
-      }
-
-      .fa-heart {
-        color: $red;
-      }
-
-      .fa-check{
-        color: $green;
-      }
+      right: 0px;
+      background-size: cover;
     }
 
+    &-status {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
   }
+
   &-user {
     background-color: white;
     font-size: 15px;
@@ -65,9 +50,6 @@
       background-color:#0F243F;
       border-radius: 50%;
     }
-
-
-
   }
 }
 
@@ -75,6 +57,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    text-align: left;
     padding: 10px;
 
     i {
