@@ -44,11 +44,8 @@
     item-align: center;
     padding: 12px;
 
-    &-avatar {
-      height: 20px;
-      width:20px;
-      background-color:#0F243F;
-      border-radius: 50%;
+    em {
+      padding-right: 10px;
     }
   }
 }

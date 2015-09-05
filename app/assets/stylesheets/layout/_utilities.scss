@@ -6,9 +6,7 @@
 
 // Titles
 h1 {
-
   font-size: 28px;
-  padding: 60px;
   margin: 0px;
   margin-bottom: 15px;
 }
@@ -39,7 +37,6 @@ h2 {
 }
 
 // Positions
-
 .bottom-fit {
   position:absolute;
   bottom: 0px;
@@ -47,20 +44,27 @@ h2 {
   right: 0px;
 }
 
-
-
 // Paddings
-.padded {
+.padding-bottom-20{
   padding-bottom: 20px;
 }
+
+.padding-20 {
+  padding: 20px;
+}
+.padding-60 {
+  padding: 60px;
+}
+
 .padding-horizontal-18 {
   padding-right: 18px;
   padding-left: 18px;
 }
+
+// Margin to take the footbar into account
 .margin-bottom-74 {
   margin-bottom: 74px;
 }
-
 .large {
   font-size: $large-size;
 }

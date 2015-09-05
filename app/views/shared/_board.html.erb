@@ -1,16 +1,22 @@
-<!-- Experience board buttons -->
+<!-- Cross - Hear - Check Board -->
 
 <ul class="list-inline large">
+
+  <!-- Cross Item -->
   <li>
     <%=link_to experiences_path(id: experience, status: "not interested"), method: :post do %>
       <i class="fa fa-times padding-horizontal"></i>
     <% end %>
   </li>
+
+  <!-- Heart Item -->
   <li class="heart">
     <%=link_to experiences_path(id: experience, status: "interested"), method: :post do %>
       <i class="fa fa-heart padding-horizontal"></i>
     <% end %>
   </li>
+
+  <!-- Check Item -->
   <li class="check">
     <%=link_to experiences_path(id: experience, status: "done"), method: :post do %>
       <i class="fa fa-check padding-horizontal"></i>
