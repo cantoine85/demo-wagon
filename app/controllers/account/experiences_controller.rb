@@ -10,12 +10,7 @@ module Account
     end
 
     def index
-      if Experience.where(actor:current_user) != []
-        @experiences = Experience.where(actor:current_user)
-      else
-        @message = "Vous n'avez pas encore d'expériences dans votre vision board"
-      end
-
+      @experiences = Experience.where(actor:current_user)
     end
 
     def detail
