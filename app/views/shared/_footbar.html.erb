@@ -1,8 +1,15 @@
 <ul class="footbar list-inline">
   <li>
-    <%= link_to experience_path(id:1) do %>
-      <i class="fa fa-search"></i><br>
-      Search
+    <% if @experiences.present? %>
+      <%= link_to experience_path(id:@experiences.first.id) do %>
+        <i class="fa fa-search"></i><br>
+        Search
+      <% end %>
+    <% else %>
+      <%= link_to experiences_path do %>
+        <i class="fa fa-search"></i><br>
+        Search
+      <% end %>
     <% end %>
   </li>
   <li>
