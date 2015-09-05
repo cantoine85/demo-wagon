@@ -1,6 +1,18 @@
-<div class="experience-banner padded" style="background-image: url(<%= @experience.adventure.picture.url %>);">
-  <h1><%= @experience.title %></h1>
-  <p>inspired by <%= @experience.inspirer.first_name %></p>
+
+<!-- Experience details banner -->
+<div class="experience-details-banner text-center" style="background-image: url(<%= @experience.adventure.picture.url %>);">
+  <div class="experience-details-banner-content">
+    <h1><%= @experience.title %></h1>
+    <p>inspired by <%= @experience.inspirer.first_name %></p>
+  </div>
+  <div class="experience-details-banner-shadow"></div>
+  <div class="experience-details-banner-category">Voyage</div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+  </div>
 </div>
 
 
