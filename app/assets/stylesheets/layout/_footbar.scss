@@ -2,6 +2,11 @@
 
   padding: 2.5px;
   background-color: white;
+  position: fixed;
+  bottom:0px;
+  margin: 0px;
+  // z-index: 3;
+  width: 100%;
   display: flex;
   justify-content: space-around;
 

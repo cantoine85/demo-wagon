@@ -1,27 +1,25 @@
 class ExperiencesController < ApplicationController
-#before_action :find_categories, only: [:create]
+  before_action :set_experience, only: [:show, :show_details, :create ]
 
   def index
-
+    @experiences = Experience.all
   end
 
   def show
-    # 1 - Get experience from id params
-    @experience = Experience.find(params[:id])
+  end
 
+  def show_details
   end
 
   def create
-
     # 1 - Get experience from your inspirer
-    experience = Experience.find(params[:experience_id])
-    adventure = Adventure.find(experience.adventure)
+    adventure = Adventure.find(@experience.adventure)
 
     # 2 - Get inspirer (if actor nil, get creator)
-    if experience.actor
-      inspirer = experience.actor
+    if @experience.actor
+      inspirer = @experience.actor
     else
-      inspirer = experience.inspirer
+      inspirer = @experience.inspirer
     end
 
     # 3 - Create your own experience
@@ -30,9 +28,17 @@ class ExperiencesController < ApplicationController
 
     # 4 - Save your own experience and redirect to aleatory experience
     if new_experience.save
-      redirect_to experience_path(experience.id + 1)
+      redirect_to experience_path(@experience.id + 1)
     end
   end
+
+  private
+
+  def set_experience
+    @experience = Experience.find(params[:id])
+  end
+
+end
 
   # def edit
   #   if @experience.token == cookies[:temporary_exp_token]
@@ -52,5 +58,3 @@ class ExperiencesController < ApplicationController
   # def display_validate_past_experience
 #
   # end
-
-end

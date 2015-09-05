@@ -1,35 +1,39 @@
-.card {
+.experience-card {
 
   position: relative;
   height: 330px;
   width:100%;
   max-width: 250px;
   margin: auto;
-  background-color: #0F243F;
-  border: 1px solid rgb(150, 150, 150);
   box-shadow: 1px 1px 1px #888888;
 
   &-title {
-    height: 30px;
-    background-color: white;
+    vertical-align: center;
     font-size: 15px;
-    color: #0F243F;
     margin: 0px;
-    padding:5px;
+    padding:12px;
+    background-color: white;
+    color: #0F243F;
+  }
+
+  &-block {
+    height: 250px;
+    &-image {
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      // vertical-align: center;
+    }
   }
 
   &-user {
-    height: 50px;
     background-color: white;
     font-size: 15px;
     color: #0F243F;
     display:flex;
     justify-content: center;
     item-align: center;
-
-    h2 {
-
-    }
+    padding: 12px;
 
     &-avatar {
       height: 20px;
@@ -41,17 +45,10 @@
       padding: 0px 18px;
     }
   }
-  experience-card-image-block {
-    height: 250px;
-  }
-  .experience-card-image {
-    height: 200px;
-
-    background-size: cover;
-    vertical-align: center;
-  }
 
 
+
+  // border: 1px solid rgb(150, 150, 150);
   // position: relative;
   // height: 175px;
   // text-shadow: 0 1px 3px rgba(0,0,0,0.6);

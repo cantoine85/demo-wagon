@@ -1,46 +1,57 @@
-<div class="card">
-      <div class="card-title">
-        <%= experience.title %>
-      </div>
-      <div class="experience-card-image-block">
-        <% if experience.adventure.picture_file_name %>
-          <div class= 'experience-card-image' style="background-image: url(<%= experience.adventure.picture.url %>);">
-          </div>
+<div class="experience-card">
 
-        <% end %>
-      </div>
-      <div class="card-user">
-        <% if experience.actor %>
-          <span>Inspired by <%= experience.actor.first_name %> <br>
-          <span>Created by <%= experience.adventure.user.first_name %></span>
-          </span>
-    <!--       <div class="card-user-avatar">
-          </div> -->
-        <% else %>
-          <span>Created by <%= experience.inspirer.first_name %></span>
-    <!--       <div class="card-user-avatar">
-          </div> -->
-        <% end %>
-      </div>
+  <!-- Experience title-->
+  <div class="experience-card-title">
+    <%= experience.title %>
+  </div>
 
+  <!-- Experience Block with image -->
+  <div class="experience-card-block">
+    <% if experience.adventure.picture_file_name %>
 
+        <%=link_to details_experience_path(id: experience), class:'image' do %>
+          <div class= 'experience-card-block-image' style="background-image: url(<%= experience.adventure.picture.url %>);">
+
+      </div>
+      <% end %>
+
+    <% end %>
+  </div>
+
+  <!-- Inspired By -->
+  <div class="experience-card-user">
+    <% if experience.actor %>
+      <span>Inspired by <%= experience.actor.first_name %> <br>
+      <span>Created by <%= experience.adventure.user.first_name %></span>
+      </span>
+<!--       <div class="card-user-avatar">
+      </div> -->
+    <% else %>
+      <span>Created by <%= experience.inspirer.first_name %></span>
+<!--       <div class="card-user-avatar">
+      </div> -->
+    <% end %>
+  </div>
+
+  <!-- Experience buttons -->
   <div>
     <ul class="list-inline large ">
       <li>
-        <%=link_to experiences_path(experience_id: @experience, status: "not interested"), method: :post do %>
+        <%=link_to experiences_path(id: @experience, status: "not interested"), method: :post do %>
           <i class="fa fa-times padding-horizontal"></i>
         <% end %>
       </li>
       <li>
-        <%=link_to experiences_path(experience_id: @experience, status: "interested"), method: :post do %>
+        <%=link_to experiences_path(id: @experience, status: "interested"), method: :post do %>
           <i class="fa fa-heart padding-horizontal"></i>
         <% end %>
       </li>
       <li>
-        <%=link_to experiences_path(experience_id: @experience, status: "done"), method: :post do %>
+        <%=link_to experiences_path(id: @experience, status: "done"), method: :post do %>
           <i class="fa fa-check padding-horizontal"></i>
         <% end %>
       </li>
     </ul>
   </div>
+
 </div>
