@@ -15,25 +15,30 @@
       </li>
     <% end %>
   </ul>
-  <div>
-    <div class = "container">
-        <div class = "row" >
-          <% @experiences_done.each do |experience| %>
-            <div class="col-xs-12 col-sm-4 text-center">
-                  <%= render 'shared/card', experience: experience %>
-            </div>
-          <% end %>
-        </div>
-    </div>
-  </div>
-
-
  <!-- If current user has no experiences yet, display message -->
 <% else %>
   <span>Vous n'avez pas encore d'expériences dans votre vision board</span>
 <% end %>
 
 <!-- count = x.select {|e| e == 3}.size -->
+
+<div class = "container">
+    <div class = "row" >
+      <div class="col-xs-12 col-sm-4 text-center">
+        <div id="#">
+          <% if @experiences.present? %>
+            <% @experiences_todo.each do |experience| %>
+              <%= render 'shared/card', experience: experience %>
+            <% end %>
+            <% @experiences_done.each do |experience| %>
+              <%= render 'shared/card', experience: experience %>
+            <% end %>
+          <% else %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>
 
 
 

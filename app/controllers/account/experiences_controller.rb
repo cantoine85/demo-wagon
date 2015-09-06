@@ -11,8 +11,8 @@ module Account
 
     def index
       @experiences = Experience.where(actor:current_user)
-      @experiences_done = @experiences.where(done: true)
-      @experiences_todo = @experiences.where(done: false)
+      @experiences_done = @experiences.where(status: "to_do")
+      @experiences_todo = @experiences.where(status: "done")
     end
 
     def detail
