@@ -43,15 +43,16 @@ a {
 }
 
 .link-white {
-  color: $white;
+  a {
+    color: $white;
+  }
 }
 
 .hover-blue {
   a:hover {
-   color: $brand-primary;
+    color: $brand-primary;
   }
 }
-
 .hover-red {
   a:hover {
     color: $brand-danger;
