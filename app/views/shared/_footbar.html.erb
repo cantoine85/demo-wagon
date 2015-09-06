@@ -1,27 +1,20 @@
-<ul class="footbar list-inline">
-  <li>
-    <% if @experiences.present? %>
-      <%= link_to experience_path(id:@experiences.first.id) do %>
-        <i class="fa fa-search"></i><br>
-        Search
-      <% end %>
-    <% else %>
-      <%= link_to experiences_path do %>
-        <i class="fa fa-search"></i><br>
-        Search
-      <% end %>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to account_experiences_path do %>
-      <i class="fa fa-circle"></i><br>
-      My vision board
-    <% end %>
-  </li>
-  <li>
-    <%= link_to new_adventure_path do %>
-      <i class="fa fa-plus-circle"></i><br>
-      Create
-    <% end %>
-  </li>
-</ul>
+
+<div class="board-item">
+  <%= link_to experiences_path do %>
+    <i class="fa fa-search"></i>
+    <div class="board-item-text">Explorer</div>
+  <% end %>
+</div>
+<div class="board-item">
+  <%= link_to account_experiences_path do %>
+    <i class="fa fa-circle"></i><br>
+    <div class="board-item-text">Me développer</div>
+  <% end %>
+</div>
+<div class="board-item">
+  <%= link_to new_adventure_path do %>
+    <i class="fa fa-plus-circle"></i><br>
+    <div class="board-item-text">Créer</div>
+  <% end %>
+</div>
+

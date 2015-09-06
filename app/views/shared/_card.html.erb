@@ -23,9 +23,12 @@
           <i class="fa fa-check padding-horizontal"></i>
         <% end %>
       </div>
-      <div class="board bottom-fit">
-        <%= render 'shared/board', experience: experience %>
+
+      <!-- Cross - Heart - Check Board -->
+      <div class="board bottom-fit bg-transparent">
+        <%= render 'shared/experience_selection_board', experience: experience %>
       </div>
+
     <% end %>
   </div>
 
@@ -33,11 +36,11 @@
   <div class="experience-card-user">
     <% if experience.actor %>
       <span>
-        <em>inspired by </em> <%= image_tag(experience.actor.picture, class:'avatar') %>
+        <em>inspiré par </em> <%= image_tag(experience.actor.picture, class:'avatar') %>
       </span>
     <% else %>
       <span>
-        <em>created by </em> <%= image_tag(experience.inspirer.picture, class:'avatar') %>
+        <em>créé par </em> <%= image_tag(experience.inspirer.picture, class:'avatar') %>
       </span>
     <% end %>
   </div>
