@@ -25,5 +25,8 @@ class User < ActiveRecord::Base
   has_many :lived_experiences, class_name: "Experience", foreign_key: :actor_id
   has_many :relayed_experiences, class_name: "Experience", foreign_key: :inspirer_id
 
+  def name
+    "#{first_name} #{last_name}"
+  end
 
 end
