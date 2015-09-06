@@ -18,6 +18,7 @@ h1 {
 h2 {
   font-size: 18px;
   margin: 0px;
+  padding: 20px;
 }
 
 // Icons
@@ -31,6 +32,39 @@ h2 {
   color: $green;
 }
 
+// Texts
+
+// Links
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.link-white {
+  a {
+    color: $white;
+  }
+}
+
+.hover-blue {
+  a:hover {
+    color: $brand-primary;
+  }
+}
+.hover-red {
+  a:hover {
+    color: $brand-danger;
+  }
+}
+
+.hover-green{
+  a:hover {
+    color: $brand-success;
+  }
+}
+
 // Bootstrap fixings
 .padding-0 {
   padding: 0px;
@@ -39,6 +73,13 @@ h2 {
 // Positions
 .bottom-fit {
   position:absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.bottom-fixed {
+  position: fixed;
   bottom: 0px;
   left: 0px;
   right: 0px;
@@ -73,6 +114,15 @@ h2 {
 .bg-text {
   background: #4a4a4a;
 }
+
+.bg-white {
+  background: white;
+}
+
+.bg-transparent {
+  background: rgba(0, 0, 0, 0.4);
+}
+
 .bg-email {
   background: #aeaeae;
 }
