@@ -1,12 +1,9 @@
 module Account
   class ExperiencesController < ApplicationController
-
     def new
-
     end
 
     def create
-
     end
 
     def index
@@ -16,7 +13,8 @@ module Account
     end
 
     def todo
-      @experiences = Experience.where(actor:current_user)
+      @experiences = Experience.where(actor: current_user).where(status: "to_do")
+      @categories = get_categories(@experiences)
     end
 
     def detail
@@ -24,6 +22,12 @@ module Account
       @experience_coordinates = { lat: @experience.latitude, lng: @experience.longitude }
     end
 
+    private
+
+    def get_categories(experiences)
+      categories = experiences.map {|experience| experience.category }
+      categories.uniq
+    end
   end
 end
 

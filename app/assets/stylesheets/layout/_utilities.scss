@@ -4,6 +4,17 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 
+
+// Images
+
+.img-square {
+  border-radius: 1px;
+}
+
+.small {
+  width: 30px;
+}
+
 // Titles
 h1 {
   font-size: 28px;
@@ -132,4 +143,7 @@ a {
 }
 .bg-facebook {
   background: #3b5998;
+}
+.no-padding {
+  padding: 0 !important;
 }

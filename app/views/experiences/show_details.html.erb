@@ -10,7 +10,7 @@
           <p>inspiré par <%= image_tag(@experience.inspirer.picture, class:'avatar') %></p>
         </div>
         <div class="experience-details-banner-shadow"></div>
-        <div class="experience-details-banner-category">Voyage</div>
+        <div class="experience-details-banner-category" style="background-color: $<%=  @experience.category %>"><%= @experience.category.capitalize %></div>
       </div>
     </div>
   </div>

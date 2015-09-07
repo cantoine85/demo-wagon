@@ -7,7 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Experience.destroy_all
-User.destroy_all
 
 users = [
   { email: "nathy@gmail.com",
@@ -114,7 +113,13 @@ adventures.each_with_index do |adventure, index|
   if e.save
     e.save
     exp = Experience.new(adventure: e, inspirer_id: e.user_id)
+    if index.odd?
+      exp.status = "done"
+    else
+      exp.status = "to_do"
+    end
     exp.save
+    puts "#{exp.id}.#{exp.title} status : #{exp.status}"
   else
     puts 'adventure not valid'
   end
