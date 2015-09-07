@@ -10,7 +10,7 @@
 
 <!-- Heart Item : To do -->
 <div class="board-item link-white hover-red">
-  <%=link_to experiences_path(id: experience, status: "to_do"), method: :post do %>
+  <%=link_to experiences_path(id: experience, status: "to_do"), method: :post, remote: true do %>
     <i class="fa fa-heart"></i>
     <div class="board-item-text">à faire</div>
   <% end %>
