@@ -7,7 +7,7 @@
       <div class="experience-details-banner" style="background-image: url(<%= @experience.adventure.picture.url %>);">
         <div class="experience-details-banner-content">
           <h1 class="padding-60"><%= @experience.title %></h1>
-          <p>inspired by <%= image_tag(@experience.inspirer.picture, class:'avatar') %></p>
+          <p>inspiré par <%= image_tag(@experience.inspirer.picture, class:'avatar') %></p>
         </div>
         <div class="experience-details-banner-shadow"></div>
         <div class="experience-details-banner-category">Voyage</div>
@@ -59,8 +59,8 @@
   <!-- Cross - Heart - Check Board -->
   <div class="row">
     <div class="col-xs-12 padding-0">
-      <div class="board">
-        <%= render 'shared/board', experience: @experience %>
+      <div class="board bg-transparent">
+        <%= render 'shared/experience_selection_board', experience: @experience %>
       </div>
     </div>
   </div>

@@ -1,0 +1,14 @@
+<div class = "container">
+    <div class = "row" >
+      <div class="col-xs-12 text-center">
+        <div id="#">
+          <% if @experiences.present? %>
+            <% @experiences.each do |experience| %>
+              <%= render 'shared/card', experience: experience %>
+            <% end %>
+          <% else %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>

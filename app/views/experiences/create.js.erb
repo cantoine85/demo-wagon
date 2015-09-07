@@ -1,0 +1,8 @@
+<% if @new_experience.errors.any? %>
+  // Render new review form with errors
+  $('.experience-card').html("<%= j render 'shared/card', experience: @other_experience %>");
+<% else %>
+  // Create a paragraph for the new review. But hide it.
+  $('.experience-card').html("<%= j render 'shared/card', experience: @other_experience %>");
+
+<% end %>
