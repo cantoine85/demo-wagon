@@ -1,11 +1,11 @@
 <h1 class="box-red text-center padding-60">Découvrez toutes les expériences de votre réseau!</h1>
 <div class = "container">
     <div class = "row" >
-      <% @experiences.each do |experience| %>
       <div class="col-xs-12 col-sm-4 text-center">
-            <%= render 'shared/card', experience: experience %>
+        <div class="experience-card" id="experience_<%= @experience.id %>">
+          <%= render 'shared/card', experience: @experience %>
+        </div>
       </div>
-      <% end %>
     </div>
 </div>
 

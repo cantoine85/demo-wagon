@@ -15,9 +15,13 @@ module Account
       @experiences_todo = @experiences.where(status: "done")
     end
 
+    def todo
+      @experiences = Experience.where(actor:current_user)
+    end
+
     def detail
-    @alert_message = "#{@experience.title}"
-    @experience_coordinates = { lat: @experience.latitude, lng: @experience.longitude }
+      @alert_message = "#{@experience.title}"
+      @experience_coordinates = { lat: @experience.latitude, lng: @experience.longitude }
     end
 
   end

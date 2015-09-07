@@ -4,6 +4,8 @@ class ExperiencesController < ApplicationController
 
   def index
     @experiences = Experience.all
+    ids = Experience.all.map { |experience| experience.id }
+    @experience = Experience.find(ids[rand(0...ids.size)])
   end
 
   def show
@@ -15,21 +17,28 @@ class ExperiencesController < ApplicationController
   def create
     # 1 - Get experience from your inspirer
     adventure = Adventure.find(@experience.adventure)
-
     # 2 - Get inspirer (if actor nil, get creator)
     if @experience.actor
       inspirer = @experience.actor
     else
       inspirer = @experience.inspirer
     end
-
     # 3 - Create your own experience
     # TO DO after migration done -> status in string :  done: params[:status]
-    new_experience = Experience.new(adventure: adventure, actor:current_user, inspirer: inspirer)
-
+    @new_experience = Experience.new(adventure: adventure, actor: current_user, inspirer: inspirer)
     # 4 - Save your own experience and redirect to aleatory experience
-    if new_experience.save
-      redirect_to experience_path(@experience.id + 1)
+    ids = Experience.all.map { |experience| experience.id }
+    @other_experience = Experience.find(ids[rand(0...ids.size)])
+    if @new_experience.save
+      respond_to do |format|
+        format.html { redirect_to experiences_path }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render :back }
+        format.js
+      end
     end
   end
 
@@ -38,6 +47,8 @@ class ExperiencesController < ApplicationController
   def set_experience
     @experience = Experience.find(params[:id])
   end
+
+
 
 end
 

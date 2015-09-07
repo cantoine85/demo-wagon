@@ -7,7 +7,9 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <%= render 'shared/card', experience: @experience %>
+      <div class="experience-card" id="experience_<%= @experience.id %>">
+        <%= render 'shared/card', experience: @experience %>
+      </div>
     </div>
   </div>
 </div>
