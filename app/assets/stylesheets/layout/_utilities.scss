@@ -4,25 +4,126 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 
+// Titles
+h1 {
+  font-size: 28px;
+  margin: 0px;
+  margin-bottom: 15px;
+}
+.box-red {
+  box-shadow: 1px 1px 1px #8C8787;
+  background-color:$red;
+  color:white;
+}
+h2 {
+  font-size: 18px;
+  margin: 0px;
+  padding: 20px;
+}
+
+// Icons
+.fa-times {
+  color: $blue;
+}
+.fa-heart {
+  color: $red;
+}
+.fa-check{
+  color: $green;
+}
+
+// Texts
+
+// Links
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: $brand-danger;
+  }
+}
+
+.link-white {
+  a {
+    color: $white;
+  }
+}
+
+.hover-blue {
+  a:hover {
+    color: $brand-primary;
+  }
+}
+.hover-red {
+  a:hover {
+    color: $brand-danger;
+  }
+}
+
+.hover-green{
+  a:hover {
+    color: $brand-success;
+  }
+}
+
+// Bootstrap fixings
+.padding-0 {
+  padding: 0px;
+}
+
+// Positions
+.bottom-fit {
+  position:absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.bottom-fixed {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
 
 // Paddings
-.padded {
-  padding-top: 5em;
-  padding-bottom: 5em;
+.padding-bottom-20{
+  padding-bottom: 20px;
 }
 
-.padding-horizontal {
-  padding-right: 20px;
-  padding-left: 20px;
+.padding-20 {
+  padding: 20px;
+}
+.padding-60 {
+  padding: 60px;
 }
 
+.padding-horizontal-18 {
+  padding-right: 18px;
+  padding-left: 18px;
+}
+
+// Margin to take the footbar into account
+.margin-bottom-74 {
+  margin-bottom: 74px;
+}
 .large {
   font-size: $large-size;
 }
+
 // Backgrounds
 .bg-text {
   background: #4a4a4a;
 }
+
+.bg-white {
+  background: white;
+}
+
+.bg-transparent {
+  background: rgba(0, 0, 0, 0.4);
+}
+
 .bg-email {
   background: #aeaeae;
 }

@@ -1,4 +1,5 @@
-<div class="container text-center">
+<!-- Experience Main Informations View -->
+<div class="container">
   <div class="row">
     <div class="category">
       <%= @experience.category %>
@@ -6,26 +7,9 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <%= render 'shared/card', experience: @experience %>
+      <div class="experience-card" id="experience_<%= @experience.id %>">
+        <%= render 'shared/card', experience: @experience %>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <ul class="list-inline large ">
-      <li>
-        <%=link_to experiences_path(experience_id: @experience, status: "not interested"), method: :post do %>
-          <i class="fa fa-times padding-horizontal"></i>
-        <% end %>
-      </li>
-      <li>
-        <%=link_to experiences_path(experience_id: @experience, status: "interested"), method: :post do %>
-          <i class="fa fa-heart padding-horizontal"></i>
-        <% end %>
-      </li>
-      <li>
-        <%=link_to experiences_path(experience_id: @experience, status: "done"), method: :post do %>
-          <i class="fa fa-check padding-horizontal"></i>
-        <% end %>
-      </li>
-    </ul>
   </div>
 </div>

@@ -1,22 +1,17 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="banner text-center">
-        <!-- <div class="banner-shadow"></div> -->
-        <div class="banner-content">
-          <h1>Vivez vos expériences</h1>
-          <p>Very cool stuff, useful and smart</p>
-          <a class="btn btn-primary btn-lg">GET IT</a>
-        </div>
-      </div>
-    </div>
+<div class="home-banner text-center">
+  <div class="home-banner-shadow"></div>
+  <div class="home-banner-content ">
+    <h1>Vivez vos expériences</h1>
+    <p>créez vos to-do lists d'expériences et gardez en mémoire les expériences marquantes de votre vie</p>
+      <%= link_to 'Générer des expériences aléatoires', experiences_path, class:"btn btn-danger btn-lg" %>
   </div>
 </div>
-
-
 
 <script>
   $(function() {
   $( "#datepicker" ).datepicker();
   });
 </script>
+
+
+

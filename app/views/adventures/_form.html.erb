@@ -1,21 +1,22 @@
+
 <div class="container">
-    <div class="row">
-      <div class="col-xs-12 text-center">
-        <%= simple_form_for(@adventure) do |f| %>
-            <%= f.error_notification %>
-            <%= f.input :title %>
-            <%= f.input :category, as: :select, collection: Adventure::CATEGORIES, prompt: "choisissez une catégorie" %>
-            <%= f.input :picture %>
-            <%= f.input :description %>
-            <%= f.input :address %>
-            <%= f.input :start_date, as: :string, input_html: {class: 'datetime'}%>
-            <%= f.input :end_date, as: :string, input_html: {class: 'datetime'}%>
-            <%= f.input :duration %>
-            <%= f.button :submit %>
-        <% end %>
-      </div>
+  <div class="row">
+    <div class="col-xs-10 text-center col-xs-offset-1">
+      <%= simple_form_for(@adventure) do |f| %>
+          <%= f.error_notification %>
+          <%= f.input :title %>
+          <%= f.input :category, as: :select, collection: Adventure::CATEGORIES, prompt: "choisissez une catégorie" %>
+          <%= f.input :picture %>
+          <%= f.input :description %>
+          <%= f.input :address %>
+          <%= f.input :start_date, as: :string, input_html: {class: 'datetime'}%>
+          <%= f.input :end_date, as: :string, input_html: {class: 'datetime'}%>
+          <%= f.input :duration %>
+          <%= f.button :submit, value:"Partagez" %>
+      <% end %>
     </div>
   </div>
+</div>
 
   <script>
   $(function() {

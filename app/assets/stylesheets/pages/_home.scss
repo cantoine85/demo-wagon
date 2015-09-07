@@ -2,3 +2,14 @@
  * SASS code SPECIFIC TO your home page
  * (margin/padding adjustments, background image, etc..)
  * ------------------------------------- */
+
+.btn {
+  margin-left: 10px;
+  padding: 0 20px;
+  border-radius: 0.3em;
+  line-height: 40px;
+  background-color: #D23333;
+  color: white;
+  font-size: 14px;
+  border: 2px solid $brand-color;
+}
