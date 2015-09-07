@@ -7,7 +7,8 @@
     <div class="col-xs-12 text-center">
       <div class="bubble-container">
         <div class="category-bubble">
-          <%=@categories.first + " " + @hash_count[@categories.first].to_s%>
+          <%=@categories.first%>
+          <div class="icon-badge icon-badge-twelve icon-badge-<%=@categories.first%>"><%=@hash_count[@categories.first]%></div>
           <%@categories.delete(@categories.first)%>
         </div>
       </div>
@@ -16,17 +17,18 @@
 
   <row>
     <% @categories.each do |category| %>
-        <div class="col-xs-6 text-center">
-          <div class="bubble-container">
-            <div class="category-bubble"><%=category  + " " + @hash_count[@category].to_s%></div>
-          </div>
+      <div class="col-xs-6 text-center">
+        <div class="bubble-container">
+            <div class="category-bubble"><%=category%></div>
+            <div class="icon-badge icon-badge-<%=category%>"><%= @hash_count[category].to_s %></div>
         </div>
+      </div>
     <% end %>
   </row>
 
 </div>
 
-
+  <i class="fa fa-envelope-o"></i>
 
 
 
