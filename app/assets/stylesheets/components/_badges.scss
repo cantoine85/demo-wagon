@@ -36,3 +36,24 @@
     border: white 1px solid;
   }
 }
+
+
+.bubble-container {
+  position: relative;
+  background: grey;
+  font-size: 10px;
+  color: white;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  margin-top: 32px;
+}
+
+.category-bubble {
+    color: white;
+    position: absolute;
+    top: 120px;
+    left:0px;
+    right:0px;
+}

@@ -1,44 +1,29 @@
 
-<h2><%= current_user.first_name%></h2>
+<h2 class="text-center"><%= current_user.first_name%></h2>
 
-<!-- If current user has experiences -->
-<% if @experiences.present? %>
-  <ul>
-    <!-- count = x.select {|e| e == 3}.size -->
-    <% @experiences.each do |experience| %>
-      <% (@categories ||= []) << experience.adventure.category %>
-    <% end %>
-    <% categories = @categories.uniq %>
-    <% categories.each do |category| %>
-      <li>
-        You have <%=  @experiences.select {|e| e.category == category }.size %> experiences of <%= category%>
-      </li>
-    <% end %>
-  </ul>
- <!-- If current user has no experiences yet, display message -->
-<% else %>
-  <span>Vous n'avez pas encore d'expériences dans votre vision board</span>
-<% end %>
-
-<!-- count = x.select {|e| e == 3}.size -->
-
-<div class = "container">
-    <div class = "row" >
-      <div class="col-xs-12 col-sm-4 text-center">
-        <div id="#">
-          <% if @experiences.present? %>
-            <% @experiences_todo.each do |experience| %>
-              <%= render 'shared/card', experience: experience %>
-            <% end %>
-            <% @experiences_done.each do |experience| %>
-              <%= render 'shared/card', experience: experience %>
-            <% end %>
-          <% else %>
-          <% end %>
+<div class="container">
+  <row>
+    <div class="col-xs-12 text-center">
+      <div class="bubble-container <%#=@categories.first%>">
+        <div class="category-bubble">
+          <%=@categories.first%>
+          <%@categories.delete(@categories.first)%>
         </div>
       </div>
     </div>
+  </row>
+    <% @categories.each do |category| %>
+      <row>
+        <div class="col-xs-6 text-center">
+         <div class="bubble-container <%#=category%>">
+           <div class="category-bubble"><%=category %></div>
+         </div>
+        </div>
+      </row>
+    <% end %>
 </div>
+
+
 
 
 
