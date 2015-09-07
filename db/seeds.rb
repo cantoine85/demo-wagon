@@ -115,6 +115,7 @@ adventures.each_with_index do |adventure, index|
     e.save
     exp = Experience.new(adventure: e, inspirer_id: e.user_id)
     exp.save
+    puts exp.adventure.title
   else
     puts 'adventure not valid'
   end

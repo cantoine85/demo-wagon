@@ -1,21 +1,31 @@
 
-<h2><%= current_user.first_name%></h2>
+<h2 class="text-center"><%= current_user.first_name%></h2>
 
-<% if @experiences != [] %>
-  <ul>
-    <% @experiences.each do |experience| %>
-      <% (@categories ||= []) << experience.adventure.category %>
+<div class="container">
+  <row>
+    <div class="col-xs-12 text-center">
+      <div class="bubble-container <%#=@categories.first%>">
+        <div class="category-bubble">
+          <%=@categories.first%>
+          <%@categories.delete(@categories.first)%>
+        </div>
+      </div>
+    </div>
+  </row>
+    <% @categories.each do |category| %>
+      <row>
+        <div class="col-xs-6 text-center">
+         <div class="bubble-container <%#=category%>">
+           <div class="category-bubble"><%=category %></div>
+         </div>
+        </div>
+      </row>
     <% end %>
-    <% categories = @categories.uniq %>
-    <% categories.each do |category| %>
-      <li>You have <%=  @experiences.select {|e| e.category == category }.size %> experiences of <%= category%></li>
-    <% end %>
-  </ul>
-<% else %>
-  <span><%=@message %></span>
-<% end %>
+</div>
 
-<!-- count = x.select {|e| e == 3}.size -->
+
+
+
 
 
 
