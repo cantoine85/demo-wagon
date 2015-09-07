@@ -10,9 +10,13 @@ module Account
     end
 
     def index
-      @experiences = Experience.where(actor:current_user)
-      @experiences_done = @experiences.where(status: "to_do")
-      @experiences_todo = @experiences.where(status: "done")
+      if Experience.where(actor:current_user) != []
+        @experiences = Experience.where(actor:current_user)
+        @categories = get_categories(@experiences)
+        @hash_count = hash_number_of_experiences_per_category(@experiences)
+      else
+        @message = "Vous n'avez pas encore d'expériences dans votre vision board"
+      end
     end
 
     def todo
@@ -24,27 +28,30 @@ module Account
       @experience_coordinates = { lat: @experience.latitude, lng: @experience.longitude }
     end
 
+
+    private
+    def get_categories (experiences)
+      categories = experiences.map {|experience| experience.adventure.category}
+      categories = categories.uniq
+    end
+
+    def hash_number_of_experiences_per_category (experiences)
+
+      categories = get_categories(experiences)
+      hash_count_for_category = {}
+      c = 0
+      categories.each do |cat|
+        experiences.each do |x|
+          if x.adventure.category == cat
+            c +=1
+            hash_count_for_category[cat] = c
+          end
+        end
+      end
+      hash_count_for_category
+    end
+
   end
 end
 
 
-
-#   private
-
-#   # PM :
-#   # def categories_params
-#   #   params.require(:category).permit(:content)
-#   # end
-
-#   def find_categories
-#   # @category = current_user.experience
-#   end
-
-
-# end
-
-#  # - le nom de la catégorie
-#  # - la photo de la dernière experience vécue par le current_user dans la catégory
-#  # - la couleur de la catégorie
-#  # - le nombre total d'expérience de la catgéorie
-#  # - le nombre d'expériences done de la catégorie
