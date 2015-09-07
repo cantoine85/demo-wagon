@@ -2,25 +2,28 @@
 <h2 class="text-center"><%= current_user.first_name%></h2>
 
 <div class="container">
+
   <row>
     <div class="col-xs-12 text-center">
-      <div class="bubble-container <%#=@categories.first%>">
+      <div class="bubble-container">
         <div class="category-bubble">
-          <%=@categories.first%>
+          <%=@categories.first + " " + @hash_count[@categories.first].to_s%>
           <%@categories.delete(@categories.first)%>
         </div>
       </div>
     </div>
   </row>
+
+  <row>
     <% @categories.each do |category| %>
-      <row>
         <div class="col-xs-6 text-center">
-         <div class="bubble-container <%#=category%>">
-           <div class="category-bubble"><%=category %></div>
-         </div>
+          <div class="bubble-container">
+            <div class="category-bubble"><%=category  + " " + @hash_count[@category].to_s%></div>
+          </div>
         </div>
-      </row>
     <% end %>
+  </row>
+
 </div>
 
 
