@@ -2,28 +2,33 @@
 <h2 class="text-center"><%= current_user.first_name%></h2>
 
 <div class="container">
+
   <row>
     <div class="col-xs-12 text-center">
-      <div class="bubble-container <%#=@categories.first%>">
+      <div class="bubble-container">
         <div class="category-bubble">
           <%=@categories.first%>
+          <div class="icon-badge icon-badge-twelve icon-badge-<%=@categories.first%>"><%=@hash_count[@categories.first]%></div>
           <%@categories.delete(@categories.first)%>
         </div>
       </div>
     </div>
   </row>
+
+  <row>
     <% @categories.each do |category| %>
-      <row>
-        <div class="col-xs-6 text-center">
-         <div class="bubble-container <%#=category%>">
-           <div class="category-bubble"><%=category %></div>
-         </div>
+      <div class="col-xs-6 text-center">
+        <div class="bubble-container">
+            <div class="category-bubble"><%=category%></div>
+            <div class="icon-badge icon-badge-<%=category%>"><%= @hash_count[category].to_s %></div>
         </div>
-      </row>
+      </div>
     <% end %>
+  </row>
+
 </div>
 
-
+  <i class="fa fa-envelope-o"></i>
 
 
 

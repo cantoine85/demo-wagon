@@ -9,31 +9,55 @@
   width: 30px;
 }
 .icon-badge, .user-badge {
-  position: absolute;
-  top: -5px;
-  right: -10px;
-  font-size: 10px;
-  color: white;
-  line-height: 18px;
-  width: 18px;
-  text-align: center;
-  border-radius: 50%;
-  background: grey;
-  &-red {
-    background: $red;
+    position: absolute;
+    right: 16px;
+    font-size: 10px;
+    color: white;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: grey;
+
+  &-twelve {
+    right: 16px;
+    top: -120px;
   }
-  &-green {
-    background: $green;
+  &-lecture {
+    background: $lecture;
   }
-  &-blue {
-    background: $blue;
+  &-culture {
+    background: $culture;
   }
-  &-black {
-    background: black;
+  &-cinéma {
+    background: $cinema;
   }
-  &-bordered {
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    border: white 1px solid;
+  &-la.vie.en.rose {
+    background: $lavieenrose;
+  }
+  &-spectacle {
+    background: $spectacle;
+  }
+  &-musique {
+    background: $musique;
+  }
+  &-voyage {
+    background: $voyage;
+  }
+  &-exposition {
+    background: $exposition;
+  }
+  &-sensations {
+    background: $sensation;
+  }
+  &-fun {
+    background: $fun;
+  }
+  &-sport {
+    background: $sport;
+  }
+  &-wellness {
+    background: $wellness;
   }
 }
 
