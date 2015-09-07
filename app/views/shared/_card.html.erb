@@ -1,49 +1,46 @@
-<div class="experience-card">
 
-  <!-- Experience title-->
-  <div class="experience-card-title">
-    <%= experience.title %>
-  </div>
 
-  <!-- Experience Block with image -->
-  <div class="experience-card-block">
-    <% if experience.adventure.picture_file_name %>
+<!-- Experience title-->
+<div class="experience-card-title">
+  <%= experience.title %>
+</div>
 
-      <!-- Link to details experience -->
-      <%=link_to details_experience_path(id: experience), class:'link' do %>
-        <div class= 'experience-card-block-link' style="background-image: url(<%= experience.adventure.picture.url(:medium) %>);">
-        </div>
+<!-- Experience Block with image -->
+<div class="experience-card-block">
+  <% if experience.adventure.picture_file_name %>
+
+    <!-- Link to details experience -->
+    <%=link_to details_experience_path(id: experience), class:'link' do %>
+      <div class= 'experience-card-block-link' style="background-image: url(<%= experience.adventure.picture.url(:medium) %>);">
+      </div>
+    <% end %>
+
+    <!-- Experience status : done, to do -->
+    <div class="experience-card-block-status">
+      <% if experience.done %>
+        <i class="fa fa-heart padding-horizontal"></i>
+      <% else %>
+        <i class="fa fa-check padding-horizontal"></i>
       <% end %>
+    </div>
 
-      <!-- Experience status : done, to do -->
-      <div class="experience-card-block-status">
-        <% if experience.done %>
-          <i class="fa fa-heart padding-horizontal"></i>
-        <% else %>
-          <i class="fa fa-check padding-horizontal"></i>
-        <% end %>
-      </div>
+    <!-- Cross - Heart - Check Board -->
+    <div class="board bottom-fit bg-transparent">
+      <%= render 'shared/experience_selection_board', experience: experience %>
+    </div>
 
-      <!-- Cross - Heart - Check Board -->
-      <div class="board bottom-fit bg-transparent">
-        <%= render 'shared/experience_selection_board', experience: experience %>
-      </div>
+  <% end %>
+</div>
 
-    <% end %>
-  </div>
-
-  <!-- Inspired By -->
-  <div class="experience-card-user">
-    <% if experience.actor %>
-      <span>
-        <em>inspiré par </em> <%= image_tag(experience.actor.picture, class:'avatar') %>
-      </span>
-    <% else %>
-      <span>
-        <em>créé par </em> <%= image_tag(experience.inspirer.picture, class:'avatar') %>
-      </span>
-    <% end %>
-  </div>
-
-
+<!-- Inspired By -->
+<div class="experience-card-user">
+  <% if experience.actor %>
+    <span>
+      <em>inspiré par </em> <%= image_tag(experience.actor.picture, class:'avatar') %>
+    </span>
+  <% else %>
+    <span>
+      <em>créé par </em> <%= image_tag(experience.inspirer.picture, class:'avatar') %>
+    </span>
+  <% end %>
 </div>
