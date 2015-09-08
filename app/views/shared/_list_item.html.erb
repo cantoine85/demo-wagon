@@ -1,8 +1,15 @@
 <!-- Experience title-->
-<div class="list-item-image" style="background-image:image-url(<%experience.adventure.picture%>)"></div>
- <!--  <%= image_tag(experience.adventure.picture, class: 'img-square small width-cover') %> -->
 
-<div class="list-item-title">
-  <%= experience.title %>
+<div class="list-item" style="background-image: url(<%= experience.adventure.picture.url %>);">
+  <%=link_to details_experience_path(id: experience) do %>
+    <div class="list-item-content"><%= experience.title %></div>
+    <div class ="list-item-category <%=experience.category%>"></div>
+    <div class="list-item-status"><i class='fa fa-check'></i></div>
+     <!-- <div class="list-item-category-title"><%= experience.category%></div> -->
+
+    <div class="banner-shadow"></div>
+  <% end %>
 </div>
+
+
 

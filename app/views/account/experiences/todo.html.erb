@@ -1,20 +1,18 @@
 
 <div class = "container">
   <% @categories.each do |category| %>
-    <div class="row">
+<!--     <div class="row">
       <div class="col-xs-12 no-padding">
         <div class="box-red padding-20">
           <%= category %>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="row">
       <% if @experiences.present? %>
         <% @experiences.select { |experience| experience.category == category }.each do |experience| %>
           <div class="col-xs-12 no-padding">
-            <div class="list-item">
               <%= render 'shared/list_item', experience: experience %>
-            </div>
           </div>
         <% end %>
       <% else %>

@@ -3,14 +3,7 @@
   <!-- Banner -->
   <div class="row">
     <div class="col-xs-12 padding-0">
-      <div class="experience-banner" style="background-image: url(<%= @experience.adventure.picture.url %>);">
-        <div class="experienced-banner-content">
-          <h1 class="padding-60"><%= @experience.title %></h1>
-          <p>inspiré par <%= image_tag(@experience.inspirer.picture, class:'avatar') %></p>
-        </div>
-        <div class="experience-banner-shadow"></div>
-        <div class="experience-banner-category" style="background-color: $<%=  @experience.category %>"><%= @experience.category.capitalize %></div>
-      </div>
+      <%= render 'shared/banner_with_category', experience: @experience %>
     </div>
   </div>
   <!-- Details experience -->

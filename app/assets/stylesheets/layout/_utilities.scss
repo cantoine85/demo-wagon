@@ -48,7 +48,6 @@ h2 {
   color: $red;
 }
 .fa-check{
-  color: $green;
 }
 
 // Texts
@@ -58,12 +57,20 @@ a {
   text-decoration: none;
   &:hover {
     text-decoration: none;
-    color: $brand-danger;
+  }
+}
+
+.link-red {
+  a:hover {
+    color: $red;
   }
 }
 
 .link-white {
   a {
+    color: white;
+  }
+  &:hover {
     color: white;
   }
 }
@@ -81,7 +88,7 @@ a {
 
 .hover-green{
   a:hover {
-    color: $brand-success;
+    color: $green;
   }
 }
 
@@ -156,4 +163,47 @@ a {
 }
 .bg-facebook {
   background: #3b5998;
+}
+
+// Background Colors for categories
+
+.lecture {
+  background: $lecture;
+}
+.culture {
+  background: $culture;
+}
+.cinema {
+  background: $cinema;
+}
+
+.balade {
+  background: $balade;
+}
+.la.vie.en.rose {
+  background: $lavieenrose;
+}
+.spectacle {
+  background: $spectacle;
+}
+.musique {
+  background: $musique;
+}
+.voyage {
+  background: $voyage;
+}
+.exposition {
+  background: $exposition;
+}
+.sensations {
+  background: $sensation;
+}
+.fun {
+  background: $fun;
+}
+.sport {
+  background: $sport;
+}
+.wellness {
+  background: $wellness;
 }
