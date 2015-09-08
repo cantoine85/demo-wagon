@@ -20,8 +20,8 @@
     background: grey;
 
   &-twelve {
-    right: 16px;
-    top: -120px;
+    right: 0;
+    bottom: 0;
   }
   &-lecture {
     background: $lecture;
@@ -70,7 +70,6 @@
 
 .bubble-container {
   position: relative;
-  background: grey;
   font-size: 10px;
   color: white;
   border-radius: 50%;
@@ -81,11 +80,27 @@
   background-position: center;
   background-size: cover;
 }
+.category-container{
+    overflow: hidden;
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
 
-.category-bubble {
-    color: white;
-    position: absolute;
-    top: 120px;
-    left:0px;
-    right:0px;
+}
+
+.category-bubble-detail {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  top: 120px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 }
