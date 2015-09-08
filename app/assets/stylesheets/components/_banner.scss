@@ -78,8 +78,8 @@
 .banner {
   position: flex;
   z-index: 0;
-  padding: 20px 20px;
   background-size: cover;
+  height: 300px;
   color: white;
   a {
     color: white;
@@ -99,14 +99,20 @@
   }
 
   &-content {
-    position:relative;
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display:flex;
+    flex-flow:column;
+    justify-content: center;
     z-index: 2;
     padding: 40px;
 
     h1 {
       padding: 0px;
       font-weight: 300;
-
     }
   }
 
