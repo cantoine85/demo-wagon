@@ -1,6 +1,6 @@
 <% if @new_experience.errors.any? %>
   // Render new review form with errors
-  $('.banner').html("<%= j render 'shared/banner', experience: @other_experience %>");
+  $('.banner').html("<%= binding.pry j render 'shared/banner', experience: @other_experience %>");
 <% else %>
   // Create a paragraph for the new review. But hide it.
   $('.banner').html("<%= j render 'shared/banner', experience: @other_experience %>");

@@ -28,7 +28,7 @@ class ExperiencesController < ApplicationController
     # TO DO after migration done -> status in string :  done: params[:status]
     status = params[:status]
     @new_experience = Experience.new(adventure: adventure, actor: current_user, inspirer: inspirer, status: status)
-    # binding.pry
+    #binding.pry
     # 4 - Save your own experience and redirect to aleatory experience
     ids = Experience.all.map { |experience| experience.id }
     @other_experience = Experience.find(ids[rand(0...ids.size)])
