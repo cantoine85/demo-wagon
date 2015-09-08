@@ -21,9 +21,7 @@ class User < ActiveRecord::Base
 
   # Associations
   has_many :adventures, dependent: :destroy # A user has many adventures
-  has_many :experiences, through: :adventures
-  has_many :lived_experiences, class_name: "Experience", foreign_key: :actor_id
-  has_many :relayed_experiences, class_name: "Experience", foreign_key: :inspirer_id
+  has_many :experiences, foreign_key: :actor_id
 
   #Get user complete name
   def name
