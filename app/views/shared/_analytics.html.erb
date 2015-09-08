@@ -1,18 +1,20 @@
 <div class="analytics">
   <span>
     <%=link_to account_todo_path, class:"hover-red" do %>
-      <i class="fa fa-heart"></i>
       <span id="toDoCount">
         <%= current_user.experiences_to_do_count %>
       </span>
+      <i class="fa fa-heart"></i>
+      <p>Expériences à vivre</p>
     <% end %>
   </span>
   <span>
     <%=link_to account_experiences_path, class:"hover-red" do %>
-      <i class="fa fa-check"></i>
       <span id="doneCount">
         <%= current_user.experiences_done_count %>
       </span>
+      <i class="fa fa-check"></i>
+      <p>Expériences vécues</p>
     <% end %>
   </span>
 </div>

@@ -3,10 +3,18 @@
   padding: 20px;
   background-color: white;
   justify-content: space-around;
-  font-size: 30px;
   // vertical-align: middle;
   i {
     font-size:60px;
+  }
+
+  p {
+    font-szie:30px;
+  }
+
+  #toDoCount, #doneCount {
+    font-size:30px;
+
   }
 
 }
