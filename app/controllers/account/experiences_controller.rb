@@ -7,12 +7,12 @@ module Account
     end
 
     def index
-      if Experience.where(actor:current_user) != []
-        @experiences = Experience.where(actor:current_user)
+      if Experience.where(actor:current_user)#.where(status: "done") != []
+        @experiences = Experience.where(actor:current_user)#.where(status: "done")
         @categories = get_categories(@experiences)
         @hash_count = hash_number_of_experiences_per_category(@experiences)
       else
-        @message = "Vous n'avez pas encore d'expériences dans votre vision board"
+        @message = "Vous n'avez pas encore d'expériences vécues dans votre vision board"
       end
     end
 
