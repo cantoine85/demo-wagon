@@ -1,0 +1,18 @@
+
+<div class = "container">
+  <div class="row">
+    <% if @experiences.present? %>
+      <% @experiences.select { |experience| experience.category == category }.each do |experience| %>
+      <div class="col-xs-12 no-padding">
+        <%=render 'shared/list_item', experience: experience %>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   namespace :account do
     resources :experiences
     get 'todo' => 'experiences#todo'
+    get 'done' => 'experiences#done'
   end
 
 

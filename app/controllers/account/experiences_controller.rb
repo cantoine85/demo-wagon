@@ -23,6 +23,12 @@ module Account
       @categories = get_categories(@experiences)
     end
 
+    def done
+      @experiences = Experience.where(actor: current_user).where(status: "done")
+      @categories = get_categories(@experiences)
+      #raise
+    end
+
     def detail
       @alert_message = "#{@experience.title}"
       @experience_coordinates = { lat: @experience.latitude, lng: @experience.longitude }
