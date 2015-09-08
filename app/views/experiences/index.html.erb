@@ -2,8 +2,15 @@
 <div class = "container">
     <div class = "row" >
       <div class="col-xs-12 no-padding text-center ">
-        <div class="large-experience-card" id="experience_<%= @experience.id %>">
-          <%= render 'shared/card', experience: @experience %>
+        <div id="experience_<%= @experience.id %>">
+          <%= render 'shared/banner', experience: @experience %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 padding-0">
+        <div class="board bg-transparent">
+          <%= render 'shared/experience_selection_board', experience: @experience %>
         </div>
       </div>
     </div>

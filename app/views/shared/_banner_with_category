@@ -1,0 +1,8 @@
+<div class="banner" style="background-image: url(<%= experience.adventure.picture.url %>);">
+  <div class="banner-content">
+    <h1 class="padding-60"><%= experience.title %></h1>
+    <p>inspiré par <%= image_tag(experience.inspirer.picture, class:'avatar') %></p>
+  </div>
+  <div class="banner-shadow"></div>
+  <div class="banner-category" style="background-color: $<%=  @experience.category %>"><%= experience.category.capitalize %></div>
+</div>

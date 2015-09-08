@@ -58,13 +58,21 @@ a {
   text-decoration: none;
   &:hover {
     text-decoration: none;
-    color: $brand-danger;
+  }
+}
+
+.link-red {
+  a:hover {
+    color: $red;
   }
 }
 
 .link-white {
   a {
-    color: $white;
+    color: white;
+  }
+  &:hover {
+    color: white;
   }
 }
 
