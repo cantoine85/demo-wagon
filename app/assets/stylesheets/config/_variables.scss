@@ -2,9 +2,9 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,900,100|Open+Sans:400,300,600);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900|Open+Sans:400,300,600,700);
 $base-font: "Open Sans", "Helvetica", "sans-serif";
-$header-font: "Roboto", "Helvetica", "sans-serif";
+$header-font: "Lato", "sans-serif";
 
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -38,13 +38,16 @@ $cinema: #795549;
 $balade: #adcdc2;
 $lavieenrose: #e3868f;
 $spectacle: #ff1744;
-$musique: #26c446;
+$musique: #32B796;
 $voyage: #7accb8;
-$exposition: #154F8B;
+$exposition: #818F84;
 $sensation: #00b2ca;
-$fun: #f9cb11;
-$sport: #ff3d00;
-$wellness: #00FBE4;
+$fun: #D9CE52;
+$sport: #FF8812;
+$plaisir: #00FBE4;
+$spiritualite: #4F84C4;
+$cuisine: #A31A3B;
+
 
 // Gray scale
 $grey-darker:  lighten(#000, 13.5%); // #222

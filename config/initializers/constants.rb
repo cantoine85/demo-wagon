@@ -1,7 +1,7 @@
 CATEGORIES = [
   "lecture",
   "culture",
-  "cinema",
+  "cinéma",
   "balade",
   "lavieenrose",
   "spectacle",
@@ -11,5 +11,6 @@ CATEGORIES = [
   "sensation",
   "fun",
   "sport",
-  "wellness",
+  "plaisir",
+  "spiritualité"
 ]
