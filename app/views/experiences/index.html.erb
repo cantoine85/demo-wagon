@@ -7,7 +7,7 @@
   </div>
   <div class = "row" >
     <div class="col-xs-12 no-padding text-center ">
-      <div id="experience_<%= @experience.id %>">
+      <div class="banner" id="experience_<%= @experience.id %>" style="background-image: url(<%= @experience.adventure.picture.url %>);">
         <%= render 'shared/banner', experience: @experience %>
       </div>
     </div>

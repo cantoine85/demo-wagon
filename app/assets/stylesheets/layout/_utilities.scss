@@ -70,19 +70,17 @@ a {
   a {
     color: white;
   }
-  &:hover {
-    color: white;
-  }
+
 }
 
 .hover-blue {
   a:hover {
-    color: $brand-primary;
+    color: $blue;
   }
 }
 .hover-red {
   a:hover {
-    color: $brand-danger;
+    color: $red;
   }
 }
 
@@ -203,7 +201,4 @@ a {
 }
 .sport {
   background: $sport;
-}
-.wellness {
-  background: $wellness;
 }
