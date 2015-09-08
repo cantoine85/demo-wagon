@@ -1,8 +1,12 @@
 .analytics {
   display:flex;
-  height: 20px;
   padding: 20px;
   background-color: white;
-  justify-content: center;
+  justify-content: space-around;
+  font-size: 30px;
   // vertical-align: middle;
+  i {
+    font-size:60px;
+  }
+
 }
