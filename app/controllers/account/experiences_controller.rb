@@ -10,7 +10,8 @@ module Account
       if Experience.where(actor:current_user)#.where(status: "done") != []
         @experiences = Experience.where(actor:current_user)#.where(status: "done")
         @categories = get_categories(@experiences)
-        @hash_count = hash_experiences_per_category(@experiences)
+        #@hash_count = hash_experiences_per_category(@experiences)
+        @hash_pic = get_last_exp_pic_by_category(@experiences)
 
       else
         @message = "Vous n'avez pas encore d'expériences vécues dans votre vision board"
@@ -35,45 +36,31 @@ module Account
 
     def hash_experiences_per_category (experiences)
       categories = get_categories(experiences)
-      array = []
       hash = {}
       categories.each do |cat|
+        array = []
         hash[cat] = array
         experiences.each do |x|
           if x.adventure.category == cat
             array << x
-            array.sort_by(id)
+            array.sort_by{ |exp| exp.updated_at}
             hash[cat] = array
           end
         end
       end
-
-      # hash_count_for_category = {}
-      # c = 0
-      # categories.each do |cat|
-      #   # hash_count_for_category = Experience.where(experience.category == cat).count
-      #   experiences.each do |x|
-      #     if x.adventure.category == cat
-      #       c +=1
-      #       hash_count_for_category[cat] = c
-      #     end
-      #   end
-      # end
-      # hash_count_for_category
+      hash
     end
 
-    def get_last_experience_by_category(experiences)
+    def get_last_exp_pic_by_category(experiences)
+      hash = hash_experiences_per_category(experiences)
+
       categories = get_categories(experiences)
-      array = []
       categories.each do |cat|
-        hash[cat] = []
-        experiences.each do |x|
-          if x.adventure.category == cat
-            array.insert(x)
-          end
-        end
+        array = hash[cat]
+        pic = array.last.adventure.picture.url
+        hash[cat] = pic
       end
-      array
+      hash
     end
 
   end
