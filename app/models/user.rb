@@ -25,8 +25,23 @@ class User < ActiveRecord::Base
   has_many :lived_experiences, class_name: "Experience", foreign_key: :actor_id
   has_many :relayed_experiences, class_name: "Experience", foreign_key: :inspirer_id
 
+  #Get user complete name
   def name
     "#{first_name} #{last_name}"
   end
+  # Get number of experiences with status
 
+  def experiences_to_do_count
+    experiences_count("to_do")
+  end
+
+  def experiences_done_count
+    experiences_count("done")
+  end
+
+  private
+
+  def experiences_count(status)
+    experiences.select { |experience| experience.status == status }.size
+  end
 end
