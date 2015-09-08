@@ -1,56 +1,36 @@
-<h2><%= current_user.first_name%></h2>
 
-<!-- If current user has experiences -->
 <% if @experiences.present? %>
-  <ul>
-    <!-- count = x.select {|e| e == 3}.size -->
-    <% @experiences.each do |experience| %>
-      <% (@categories ||= []) << experience.adventure.category %>
-    <% end %>
-    <% categories = @categories.uniq %>
-    <% categories.each do |category| %>
-      <li>
-        You have <%=  @experiences.select {|e| e.category == category }.size %> experiences of <%= category%>
-      </li>
-    <% end %>
-  </ul>
- <!-- If current user has no experiences yet, display message -->
+
+  <div class="container">
+    <row>
+      <div class="col-xs-12 text-center">
+        <div class="bubble-container">
+          <div class="category-bubble" style="background-image: url('product.jpg')">
+            <%=@categories.first%>
+            <div class="icon-badge icon-badge-twelve icon-badge-<%=@categories.first%>"><%=@hash_count[@categories.first]%></div>
+            <%@categories.delete(@categories.first)%>
+          </div>
+        </div>
+      </div>
+    </row>
+
+    <row>
+      <% @categories.each do |category| %>
+        <div class="col-xs-6 text-center">
+          <div class="bubble-container">
+              <div class="category-bubble" style="background-image: url('product.jpg')"><%=category%></div>
+              <div class="icon-badge icon-badge-<%=category%>"><%= @hash_count[category].to_s %></div>
+          </div>
+        </div>
+      <% end %>
+    </row>
+  </div>
+
+
 <% else %>
   <span>Vous n'avez pas encore d'expériences dans votre vision board</span>
 <% end %>
 
-<!-- count = x.select {|e| e == 3}.size -->
-
-<h2 class="text-center"><%= current_user.first_name%></h2>
-
-<div class="container">
-
-  <row>
-    <div class="col-xs-12 text-center">
-      <div class="bubble-container">
-        <div class="category-bubble">
-          <%=@categories.first%>
-          <div class="icon-badge icon-badge-twelve icon-badge-<%=@categories.first%>"><%=@hash_count[@categories.first]%></div>
-          <%@categories.delete(@categories.first)%>
-        </div>
-      </div>
-    </div>
-  </row>
-
-  <row>
-    <% @categories.each do |category| %>
-      <div class="col-xs-6 text-center">
-        <div class="bubble-container">
-            <div class="category-bubble"><%=category%></div>
-            <div class="icon-badge icon-badge-<%=category%>"><%= @hash_count[category].to_s %></div>
-        </div>
-      </div>
-    <% end %>
-  </row>
-
-</div>
-
-  <i class="fa fa-envelope-o"></i>
 
 
 
