@@ -1,5 +1,5 @@
 CATEGORIES = [
-  "lecture",
+  "sweetlife",
   "culture",
   "cinéma",
   "balade",
@@ -12,5 +12,8 @@ CATEGORIES = [
   "fun",
   "sport",
   "plaisir",
-  "spiritualité"
+  "spiritualité",
+  "food",
+  "engagement"
+
 ]
