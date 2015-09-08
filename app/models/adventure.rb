@@ -11,7 +11,7 @@ class Adventure < ActiveRecord::Base
 
 
   # Create global variable
-  CATEGORIES = ['voyage', 'balade', 'fun', 'la vie en rose', 'plaisir', 'cinéma', 'art', 'théâtre', 'opéra', 'musique', 'sport', 'évasion', 'spectacle', 'concert', 'photographie', 'sensations']
+  CATEGORIES = ['lecture', 'culture', 'cinéma', 'balade', 'la vie en rose', 'spectacle', 'musique', 'voyage', 'exposition', 'sensation', 'fun', 'sport', 'plaisir', 'spiritualité']
 
 
   # Add paperclip picture
