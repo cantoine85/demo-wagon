@@ -19,3 +19,25 @@
     }
   }
 }
+
+.board-game {
+  padding-top: 8.5px;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 300;
+
+  &-item {
+    text-align: center;
+    font-size: 10px;
+
+    i {
+        font-size: 80px;
+      }
+
+    &-text {
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+  }
+}

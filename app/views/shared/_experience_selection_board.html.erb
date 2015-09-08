@@ -1,28 +1,24 @@
 <!-- Experience Selection board : Cross - Hear - Check Board -->
 
 <!-- Cross Item : Not interested -->
-<div class="board-item link-white">
+<div class="board-game-item">
   <%=link_to experiences_path(id: experience, status: "not_interested"), class:"hover-blue", method: :post, remote: true do %>
     <i class="fa fa-times"></i>
-    <div class="board-item-text">ne plus me montrer</div>
+    <div class="board-game-item-text">ne plus <br> me montrer </div>
   <% end %>
 </div>
-
 <!-- Heart Item : To do -->
-<div class="board-item link-white">
+<div class="board-game-item">
   <%=link_to experiences_path(id: experience, status: "to_do"), class:"hover-red", method: :post, remote: true do %>
     <i class="fa fa-heart"></i>
-    <div class="board-item-text">wishlist</div>
+    <div class="board-game-item-text">wishlist</div>
   <% end %>
 </div>
-
-
-
 <!-- Check Item : Done -->
-<div class="board-item link-white">
+<div class="board-game-item">
   <%=link_to experiences_path(id: experience, status: "done"), class:"hover-green", method: :post, remote: true do %>
     <i class="fa fa-check"></i>
-    <div class="board-item-text">fait</div>
+    <div class="board-game-item-text">fait</div>
   <% end %>
 </div>
 

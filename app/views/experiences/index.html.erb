@@ -1,10 +1,6 @@
 <!-- <h1 class="box-red text-center padding-60">Découvrez toutes les expériences de votre réseau!</h1> -->
 <div class = "container">
-  <div class = "row">
-    <div class="col-xs-12 no-padding text-center">
-      <%= render 'shared/analytics', experience: @experience %>
-    </div>
-  </div>
+
   <div class = "row" >
     <div class="col-xs-12 no-padding text-center ">
       <div class="banner" id="experience_<%= @experience.id %>" style="background-image: url(<%= @experience.adventure.picture.url %>);">
@@ -14,9 +10,14 @@
   </div>
   <div class="row">
     <div class="col-xs-12 padding-0">
-      <div class="board bg-transparent">
+      <div class="board">
         <%= render 'shared/experience_selection_board', experience: @experience %>
       </div>
+    </div>
+  </div>
+  <div class = "row">
+    <div class="col-xs-12 no-padding text-center">
+      <%= render 'shared/analytics', experience: @experience %>
     </div>
   </div>
 </div>
