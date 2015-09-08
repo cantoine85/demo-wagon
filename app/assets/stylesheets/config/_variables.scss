@@ -2,9 +2,9 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,900,100|Open+Sans:400,300,600);
 $base-font: "Open Sans", "Helvetica", "sans-serif";
-$header-font: "Raleway", "Helvetica", "sans-serif";
+$header-font: "Roboto", "Helvetica", "sans-serif";
 
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -32,22 +32,19 @@ $blue: #469AE0;
 $yellow: #FDB631;
 $orange: #E67E22;
 $green: #32B796;
-$white: #C2BCBC;
-
-
-$lecture: #e9c9b5 ;
-$culture: #9dc3d4 ;
-$cinema: #795549 ;
-$balade: #adcdc2 ;
-$lavieenrose: #e3868f ;
-$spectacle: #ff1744 ;
-$musique: #26c446 ;
-$voyage: #7accb8 ;
-$exposition: #154F8B ;
-$sensation: #00b2ca ;
-$fun: #f9cb11 ;
-$sport: #ff3d00 ;
-$wellness: #00FBE4 ;
+$lecture: #e9c9b5;
+$culture: #9dc3d4;
+$cinema: #795549;
+$balade: #adcdc2;
+$lavieenrose: #e3868f;
+$spectacle: #ff1744;
+$musique: #26c446;
+$voyage: #7accb8;
+$exposition: #154F8B;
+$sensation: #00b2ca;
+$fun: #f9cb11;
+$sport: #ff3d00;
+$wellness: #00FBE4;
 
 // Gray scale
 $grey-darker:  lighten(#000, 13.5%); // #222

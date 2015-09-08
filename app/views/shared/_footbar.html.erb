@@ -1,20 +1,33 @@
 
 <div class="board-item">
+  <%= link_to root_path do %>
+    <i class="fa fa-star"></i>
+    <div class="board-item-text">Sélection</div>
+  <% end %>
+</div>
+<div class="board-item">
   <%= link_to experiences_path do %>
-    <i class="fa fa-search"></i>
-    <div class="board-item-text">Explorer</div>
+    <i class="fa fa-lightbulb-o"></i></i><br>
+    <div class="board-item-text">Expériences</div>
+  <% end %>
+</div>
+<div class="board-item">
+  <%= link_to account_todo_path do %>
+    <i class="fa fa-list"></i><br>
+    <div class="board-item-text">Ma to do</div>
   <% end %>
 </div>
 <div class="board-item">
   <%= link_to account_experiences_path do %>
-    <i class="fa fa-circle"></i><br>
-    <div class="board-item-text">Me développer</div>
+    <i class="fa fa-book"></i><br>
+    <div class="board-item-text">Mon album</div>
   <% end %>
 </div>
-<div class="board-item">
+<!-- <div class="board-item">
   <%= link_to new_adventure_path do %>
     <i class="fa fa-plus-circle"></i><br>
     <div class="board-item-text">Créer</div>
   <% end %>
-</div>
+</div> -->
+
 

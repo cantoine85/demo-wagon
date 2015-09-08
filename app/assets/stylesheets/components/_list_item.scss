@@ -1,0 +1,21 @@
+.list-item {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+
+
+  &-title {
+    flex: 10 0 0;
+
+    text-align: left;
+    padding: 13px;
+    background-color: white;
+    border-bottom: 1px solid $grey-lighter;
+
+  }
+
+  &-image {
+    flex: 1 0 0;
+  }
+
+}
