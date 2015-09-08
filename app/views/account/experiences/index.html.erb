@@ -7,7 +7,7 @@
         <div class="bubble-container" style="background-image: url(<%=@hash_pic[@categories.first]%>)">
           <div class="category-bubble">
             <%=@categories.first%>
-            <div class="icon-badge icon-badge-twelve icon-badge-<%=@categories.first%>"><%#=@hash_count[@categories.first]%></div>
+            <div class="icon-badge icon-badge-twelve icon-badge-<%=@categories.first%>"><%=@hash_count[@categories.first].size%></div>
             <%@categories.delete(@categories.first)%>
           </div>
         </div>
@@ -19,7 +19,7 @@
         <div class="col-xs-6 text-center">
           <div class="bubble-container" style="background-image: url(<%=@hash_pic[category]%>)">
               <div class="category-bubble"><%=category%></div>
-              <div class="icon-badge icon-badge-<%=category%>"><%#= @hash_count[category].to_s %></div>
+              <div class="icon-badge icon-badge-<%=category%>"><%= @hash_count[category].size %></div>
           </div>
         </div>
       <% end %>

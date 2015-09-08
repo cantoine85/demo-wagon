@@ -10,7 +10,7 @@ module Account
       if Experience.where(actor:current_user)#.where(status: "done") != []
         @experiences = Experience.where(actor:current_user)#.where(status: "done")
         @categories = get_categories(@experiences)
-        #@hash_count = hash_experiences_per_category(@experiences)
+        @hash_count = hash_experiences_per_category(@experiences)
         @hash_pic = get_last_exp_pic_by_category(@experiences)
 
       else
