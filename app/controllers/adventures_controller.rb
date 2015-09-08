@@ -17,6 +17,7 @@ class AdventuresController < ApplicationController
 
   def new
     @adventure = Adventure.new
+    @adventure.experiences.build
   end
 
   def create

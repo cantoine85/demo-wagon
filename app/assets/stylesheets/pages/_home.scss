@@ -3,13 +3,32 @@
  * (margin/padding adjustments, background image, etc..)
  * ------------------------------------- */
 
-.btn {
-  margin-left: 10px;
-  padding: 0 20px;
-  border-radius: 0.3em;
-  line-height: 40px;
-  background-color: #D23333;
-  color: white;
-  font-size: 14px;
-  border: 2px solid $brand-color;
+.home-bandeau {
+  // padding: 20px;
+
+  &-content {
+    position: relative;
+    color: $grey-dark;
+    line-height: 1.1;
+
+    p {
+      padding: 40px 0px 22px 0px;
+      font-size: 14px;
+      font-weight: 700;
+      // line-height: 1.1;
+    }
+    #exp-btn {
+    display: inline-block;
+    padding: 20px 30px 20px 30px ;
+    border-radius: 0.1em;
+    line-height: 10px;
+    color: $grey-dark;
+    // background-color: rgba(0, 0, 0, 0.2);
+    font-weight: 400;
+    font-size: 12px;
+    border: 1.4px solid $grey-dark;
+    text-transform: uppercase;
+    }
+  }
 }
+

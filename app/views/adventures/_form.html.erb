@@ -12,6 +12,9 @@
           <%= f.input :start_date, as: :string, input_html: {class: 'datetime'}%>
           <%= f.input :end_date, as: :string, input_html: {class: 'datetime'}%>
           <%= f.input :duration %>
+          <%= f.simple_fields_for :status do |ff| %>
+            <%= ff.input :status, as: :check_boxes, collection: ['déjà fait', 'à faire']  %>
+          <% end %>
           <%= f.button :submit, value:"Partagez" %>
       <% end %>
     </div>
