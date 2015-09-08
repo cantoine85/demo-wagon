@@ -4,10 +4,10 @@
   <div class="container">
     <row>
       <div class="col-xs-12 text-center">
-        <div class="bubble-container">
-          <div class="category-bubble" style="background-image: url('product.jpg')">
+        <div class="bubble-container" style="background-image: url(<%=@hash_pic[@categories.first]%>)">
+          <div class="category-bubble">
             <%=@categories.first%>
-            <div class="icon-badge icon-badge-twelve icon-badge-<%=@categories.first%>"><%=@hash_count[@categories.first]%></div>
+            <div class="icon-badge icon-badge-twelve icon-badge-<%=@categories.first%>"><%=@hash_count[@categories.first].size%></div>
             <%@categories.delete(@categories.first)%>
           </div>
         </div>
@@ -17,9 +17,9 @@
     <row>
       <% @categories.each do |category| %>
         <div class="col-xs-6 text-center">
-          <div class="bubble-container">
-              <div class="category-bubble" style="background-image: url('product.jpg')"><%=category%></div>
-              <div class="icon-badge icon-badge-<%=category%>"><%= @hash_count[category].to_s %></div>
+          <div class="bubble-container" style="background-image: url(<%=@hash_pic[category]%>)">
+              <div class="category-bubble"><%=category%></div>
+              <div class="icon-badge icon-badge-<%=category%>"><%= @hash_count[category].size %></div>
           </div>
         </div>
       <% end %>
