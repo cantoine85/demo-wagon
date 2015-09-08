@@ -68,7 +68,7 @@ adventures = [
     user_id: User.last.id - 4
   },
   { title: "Faire un saut à l'élastique depuis le pont du Gard",
-    category: "sensations",
+    category: "sensation",
     description: "c'est chaud !",
     address: "Pont du Gard",
     user_id: User.last.id - 4
@@ -98,7 +98,7 @@ adventures = [
     user_id: User.last.id - 1
   },
   { title: "faire du deltaplane à Rio",
-    category: "sensations",
+    category: "sensation",
     description: "partir d'une colline et arriver sur la plage => boire une coco verde",
     address: "Rio",
     user_id: User.last.id - 2

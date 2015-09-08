@@ -7,12 +7,13 @@ module Account
     end
 
     def index
-      if Experience.where(actor:current_user) != []
-        @experiences = Experience.where(actor:current_user)
+      if Experience.where(actor:current_user)#.where(status: "done") != []
+        @experiences = Experience.where(actor:current_user)#.where(status: "done")
         @categories = get_categories(@experiences)
-        @hash_count = hash_number_of_experiences_per_category(@experiences)
+        @hash_count = hash_experiences_per_category(@experiences)
+
       else
-        @message = "Vous n'avez pas encore d'expériences dans votre vision board"
+        @message = "Vous n'avez pas encore d'expériences vécues dans votre vision board"
       end
     end
 
@@ -32,20 +33,47 @@ module Account
       categories = categories.uniq
     end
 
-    def hash_number_of_experiences_per_category (experiences)
-
+    def hash_experiences_per_category (experiences)
       categories = get_categories(experiences)
-      hash_count_for_category = {}
-      c = 0
+      array = []
+      hash = {}
       categories.each do |cat|
+        hash[cat] = array
         experiences.each do |x|
           if x.adventure.category == cat
-            c +=1
-            hash_count_for_category[cat] = c
+            array << x
+            array.sort_by(id)
+            hash[cat] = array
           end
         end
       end
-      hash_count_for_category
+
+      # hash_count_for_category = {}
+      # c = 0
+      # categories.each do |cat|
+      #   # hash_count_for_category = Experience.where(experience.category == cat).count
+      #   experiences.each do |x|
+      #     if x.adventure.category == cat
+      #       c +=1
+      #       hash_count_for_category[cat] = c
+      #     end
+      #   end
+      # end
+      # hash_count_for_category
+    end
+
+    def get_last_experience_by_category(experiences)
+      categories = get_categories(experiences)
+      array = []
+      categories.each do |cat|
+        hash[cat] = []
+        experiences.each do |x|
+          if x.adventure.category == cat
+            array.insert(x)
+          end
+        end
+      end
+      array
     end
 
   end
