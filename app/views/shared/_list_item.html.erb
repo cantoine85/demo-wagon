@@ -1,7 +1,7 @@
 <!-- Experience title-->
 
 <div class="list-item" style="background-image: url(<%= experience.adventure.picture.url %>);">
-  <%=link_to details_experience_path(id: experience) do %>
+  <%=link_to details_experience_path(experience) do %>
     <div class="list-item-content"><%= experience.title %></div>
     <div class ="list-item-category <%=experience.category%>"></div>
     <div class="list-item-status"><i class='fa fa-check'></i></div>
