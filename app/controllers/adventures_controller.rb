@@ -72,14 +72,6 @@ class AdventuresController < ApplicationController
     redirect_to adventures_path
   end
 
-  # def edit
-  #   if @adventure.token == cookies[:temporary_exp_token]
-  #     display_validate_past_adventure
-  #   else
-  #     display_classical_edit_form
-  #   end
-  # end
-
   private
 
   def adventure_params
