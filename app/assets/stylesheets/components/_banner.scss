@@ -1,14 +1,17 @@
 .home-banner {
   position: relative;
-  z-index: 0;
+  // z-index: -1;
   background-size: cover;
   background-position: center;
   color: white;
+  margin-bottom: 2px;
   padding-top: 100px;
   padding-bottom: 100px;
   padding-left: 20px;
   padding-right: 20px;
-  background-image: image-url('home_banner.jpg');
+  &-intro {
+    background-image: image-url('home_banner.jpg');
+  }
 
   &-foodie {
     background-image: image-url('food.jpg');
@@ -56,25 +59,8 @@
       line-height: 1.1;
     }
   }
-  #ghost-btn {
-    display: inline-block;
-    padding: 20px 30px 20px 30px ;
-    border-radius: 0.1em;
-    line-height: 10px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.2);
-    font-size: 12px;
-    border: 1px solid white;
-    text-transform: uppercase;
-  }
-  #ghost-btn-holder{
-    position: absolute;
-    bottom: 24px;
-    left: 0;
-    right: 0;
-    z-index: 10;
-  }
  }
+
 .banner {
   position: flex;
   z-index: 0;
