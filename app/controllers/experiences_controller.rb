@@ -32,6 +32,7 @@ class ExperiencesController < ApplicationController
     # 4 - Save your own experience and redirect to aleatory experience
     ids = Experience.all.map { |experience| experience.id }
     @other_experience = Experience.find(ids[rand(0...ids.size)])
+    # binding.pry
     if @new_experience.save
       respond_to do |format|
         format.html { redirect_to experiences_path }
