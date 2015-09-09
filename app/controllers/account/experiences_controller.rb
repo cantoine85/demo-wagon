@@ -14,6 +14,8 @@ module Account
       #if params[:category]
         @to_do_experiences = to_do[params[:category]]
         @done_experiences = done[params[:category]]
+        #raise
+
       #end
     end
 
@@ -23,7 +25,6 @@ module Account
         @categories = get_categories(@experiences)
         @hash_count = hash_experiences_per_category(@experiences)
         @hash_pic = get_last_exp_pic_by_category(@experiences)
-
       else
         @message = "Vous n'avez pas encore d'expérience vécue dans votre vision board"
       end
