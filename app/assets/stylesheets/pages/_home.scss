@@ -4,7 +4,11 @@
  * ------------------------------------- */
 
 .home-bandeau {
-  // padding: 20px;
+  position: relative;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+
 
   &-content {
     position: relative;
@@ -12,22 +16,10 @@
     line-height: 1.1;
 
     p {
-      padding: 40px 0px 22px 0px;
+      padding: 20px 0px 10px 0px;
       font-size: 14px;
       font-weight: 700;
       // line-height: 1.1;
-    }
-    #exp-btn {
-    display: inline-block;
-    padding: 20px 30px 20px 30px ;
-    border-radius: 0.1em;
-    line-height: 10px;
-    color: $grey-dark;
-    // background-color: rgba(0, 0, 0, 0.2);
-    font-weight: 400;
-    font-size: 12px;
-    border: 1.4px solid $grey-dark;
-    text-transform: uppercase;
     }
   }
 }
