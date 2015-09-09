@@ -1,4 +1,4 @@
-<nav class="navbar-wagon <%= current_page?(controller: 'pages', action: 'home') ? 'navbar-wagon-absolute' : '' %>">
+<nav class="navbar-wagon navbar-wagon-absolute">
   <div class="navbar-wagon-container">
     <ul class="list-unstyled list-inline">
       <li>
@@ -6,8 +6,8 @@
           <%= link_to image_tag('Woom_logo_white.png'), root_path %>
         </div>
       </li>
-      <li class="pull-right">
-        <% if user_signed_in? %>
+      <% if user_signed_in? %>
+        <li class="pull-right">
           <div class="navbar-wagon-item">
             <div class="dropdown">
               <%= image_tag current_user.picture, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
@@ -25,12 +25,18 @@
               </ul>
             </div>
           </div>
+        </li>
         <% else %>
-          <%= link_to t(".sign_in", default: "Connexion"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-          <hr>
-          <%= link_to t(".sign_in", default: "Inscription"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <li class="pull-right">
+            <%= link_to t(".sign_in", default: "connexion"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          </li>
+          <li class="pull-right">
+            <hr>
+          </li>
+          <li class="pull-right">
+            <%= link_to t(".sign_in", default: "inscription"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          </li>
         <% end %>
-      </li>
     </ul>
   </div>
 </nav>
