@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   namespace :account do
     resources :experiences
     get 'todo' => 'experiences#todo'
+    get 'done' => 'experiences#done'
+    get 'my_index' => 'experiences#my_index'
   end
 
 

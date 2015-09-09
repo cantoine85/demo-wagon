@@ -1,15 +1,19 @@
 <% if @experiences.present? %>
-
-
   <div class="container">
     <row>
       <div class="col-xs-12 text-center">
         <div class="bubble-container" style="background-image: url(<%=@hash_pic[@categories.first]%>)">
           <div class="category-bubble">
-            <div class="icon-badge icon-badge icon-badge-<%=@categories.first%>"><%=@hash_count[@categories.first].size%></div>
+            <div class="icon-badge icon-badge icon-badge-<%=@categories.first%>">
+              <%=@hash_count[@categories.first].size%>
+            </div>
             <div class="category-container category-container-twelve">
-                <div class="category-bubble-detail"><%=@categories.first%></div>
+              <div class="category-bubble-detail">
+                <%= link_to account_my_index_path(category: @categories.first) do %>
+                <%=@categories.first%>
                 <%@categories.delete(@categories.first)%>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
@@ -20,20 +24,26 @@
       <% @categories.each do |category| %>
         <div class="col-xs-6 text-center">
           <div class="bubble-container" style="background-image: url(<%=@hash_pic[category]%>)">
-              <div class="icon-badge icon-badge-<%=category%>"><%= @hash_count[category].size %></div>
-              <div class="category-container">
-                <div class="category-bubble-detail"><%=category%></div>
+            <div class="icon-badge icon-badge-<%=category%>">
+              <%= @hash_count[category].size %>
+            </div>
+            <div class="category-container">
+              <div class="category-bubble-detail">
+                <%= link_to account_my_index_path(category: category) do %>
+                <%=category%>
+                <% end %>
               </div>
+            </div>
           </div>
         </div>
       <% end %>
     </row>
   </div>
 
-
 <% else %>
-  <span>Vous n'avez pas encore d'expériences dans votre vision board</span>
+  <div><%=@message%></div>
 <% end %>
+
 
 
 

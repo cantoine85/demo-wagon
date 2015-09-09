@@ -1,9 +1,12 @@
-<div class="banner" style="background-image: url(<%= experience.adventure.picture.url %>);">
-  <%=link_to details_experience_path(id: experience) do %>
-    <div class="banner-content">
-      <h1 class="padding-60"><%= experience.title %></h1>
-      <p>inspiré par <%= image_tag(experience.inspirer.picture, class:'avatar') %></p>
-    </div>
-    <div class="banner-shadow"></div>
-  <% end %>
+<div class="banner" id="showDetails" style="background-image: url(<%= experience.adventure.picture.url %>);">
+  <div class="banner-content">
+    <h1 class="padding-60"><%= experience.title %></h1>
+    <p>inspiré par <%= image_tag(experience.inspirer.picture, class:'avatar') %></p>
+
+  </div>
+  <div>
+    <i class="fa fa-arrow-down"></i>
+  </div>
+
+  <div class="banner-shadow"></div>
 </div>

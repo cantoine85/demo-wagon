@@ -1,10 +1,5 @@
 <!-- <h1 class="box-red text-center padding-60">Découvrez toutes les expériences de votre réseau!</h1> -->
 <div class = "container">
-  <div class = "row">
-    <div class="col-xs-12 no-padding text-center">
-      <%= render 'shared/analytics', experience: @experience %>
-    </div>
-  </div>
   <div class = "row" >
     <div class="col-xs-12 no-padding text-center ">
       <div class="banner" id="experience_<%= @experience.id %>" style="background-image: url(<%= @experience.adventure.picture.url %>);">
@@ -12,12 +7,32 @@
       </div>
     </div>
   </div>
+  <div class="row hidden" id="details">
+    <div class="col-xs-12">
+      <div class="experience-details-card">
+        <%= render 'shared/show_details', experience: @experience %>
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-xs-12 padding-0">
-      <div class="board bg-transparent">
+      <div class="board">
         <%= render 'shared/experience_selection_board', experience: @experience %>
       </div>
     </div>
   </div>
 </div>
-
+<%= content_for :after_js do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      $('#showDetails').on('click', function() {
+        $('#details').toggleClass('hidden');
+        if($('.fa-arrow-up').length > 0) {
+          $('.fa-arrow-up').attr('class', "fa fa-arrow-down");
+        } else {
+          $('.fa-arrow-down').attr('class', "fa fa-arrow-up");
+        }
+      })
+    })
+  <% end %>
+<% end %>
