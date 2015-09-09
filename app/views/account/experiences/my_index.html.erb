@@ -23,13 +23,17 @@
       <% end %>
     </div>
     <div role="tabpanel" class="tab-pane" id="done">
+
       <% if @done_experiences.present? %>
         <% @done_experiences.each do |experience| %>
         <div class="col-xs-12 no-padding">
           <hr>
+          <h3>TODO</h3>
           <%=render 'shared/patchwork', experience: experience %>
         </div>
         <% end %>
+      <% else %>
+        <h3>FAILED</h3>
       <% end %>
     </div>
   </div>
