@@ -6,6 +6,11 @@ module Account
     def create
     end
 
+    def my_index
+      @to_do_experiences = Experience.where(actor: current_user).where(status: "to_do")
+      @done_experiences = Experience.where(actor: current_user).where(status:"done")
+    end
+
     def index
       if Experience.where(actor:current_user).where(status: "to_do") != []
         @experiences = Experience.where(actor:current_user).where(status: "to_do")

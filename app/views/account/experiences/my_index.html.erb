@@ -1,0 +1,31 @@
+<div>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#toDo" aria-controls="toDo" role="tab" data-toggle="tab">A vivre</a></li>
+    <li role="presentation"><a href="#done" aria-controls="done" role="tab" data-toggle="tab">Vécu</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="toDo">
+      <% if @to_do_experiences.present? %>
+        <% @to_do_experiences.each do |experience| %>
+        <div class="col-xs-12 no-padding">
+          <hr>
+          <%=render 'shared/list_item', experience: experience %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="done">
+      <% if @done_experiences.present? %>
+        <% @done_experiences.each do |experience| %>
+        <div class="col-xs-12 no-padding">
+          <hr>
+          <%=render 'shared/list_item', experience: experience %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
