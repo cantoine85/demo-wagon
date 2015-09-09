@@ -11,7 +11,7 @@
       <% if @to_do_experiences.present? %>
         <% @to_do_experiences.each do |experience| %>
         <div class="col-xs-12 no-padding">
-          <hr>
+          <!-- <hr> -->
           <%=render 'shared/list_item', experience: experience %>
 
           <div class="experience-details-card hidden" id="experience_<%=experience.id%>">
@@ -27,7 +27,7 @@
         <% @done_experiences.each do |experience| %>
         <div class="col-xs-12 no-padding">
           <hr>
-          <%=render 'shared/list_item', experience: experience %>
+          <%=render 'shared/patchwork', experience: experience %>
         </div>
         <% end %>
       <% end %>

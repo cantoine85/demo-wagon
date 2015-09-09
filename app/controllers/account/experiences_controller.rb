@@ -29,6 +29,10 @@ module Account
       end
     end
 
+    def show
+      @experience = Experience.find(params[:id])
+    end
+
     def todo
       @experiences = Experience.where(actor: current_user).where(status: "to_do")
       @categories = get_categories(@experiences)

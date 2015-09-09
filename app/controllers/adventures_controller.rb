@@ -38,7 +38,7 @@ class AdventuresController < ApplicationController
     # et rediriger sur la vue show de l'expérience
     if @adventure.save
       if @experience.save
-        redirect_to experience_path(@experience)
+        redirect_to account_experience_path(@experience)
       end
     else
       render :new # renvoie le formulaire de création de l'aventure
