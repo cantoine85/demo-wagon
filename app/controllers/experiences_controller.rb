@@ -9,6 +9,7 @@ class ExperiencesController < ApplicationController
   end
 
   def show
+    #TODO
   end
 
   def show_details
