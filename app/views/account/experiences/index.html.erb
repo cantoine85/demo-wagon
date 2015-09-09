@@ -1,15 +1,19 @@
 <% if @experiences.present? %>
-
-
   <div class="container">
     <row>
       <div class="col-xs-12 text-center">
         <div class="bubble-container" style="background-image: url(<%=@hash_pic[@categories.first]%>)">
           <div class="category-bubble">
-            <div class="icon-badge icon-badge icon-badge-<%=@categories.first%>"><%=@hash_count[@categories.first].size%></div>
+            <div class="icon-badge icon-badge icon-badge-<%=@categories.first%>">
+              <%=@hash_count[@categories.first].size%>
+            </div>
             <div class="category-container category-container-twelve">
-                <div class="category-bubble-detail"><%=@categories.first%></div>
+              <div class="category-bubble-detail">
+                <%= link_to account_my_index_path(category: @categories.first) do %>
+                <%=@categories.first%>
                 <%@categories.delete(@categories.first)%>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
@@ -20,38 +24,26 @@
       <% @categories.each do |category| %>
         <div class="col-xs-6 text-center">
           <div class="bubble-container" style="background-image: url(<%=@hash_pic[category]%>)">
-              <div class="icon-badge icon-badge-<%=category%>"><%= @hash_count[category].size %></div>
-              <div class="category-container">
-                <div class="category-bubble-detail"><%=category%></div>
+            <div class="icon-badge icon-badge-<%=category%>">
+              <%= @hash_count[category].size %>
+            </div>
+            <div class="category-container">
+              <div class="category-bubble-detail">
+                <%= link_to account_my_index_path(category: category) do %>
+                <%=category%>
+                <% end %>
               </div>
+            </div>
           </div>
         </div>
       <% end %>
     </row>
   </div>
 
-
 <% else %>
-  <span>Vous n'avez pas encore d'expériences dans votre vision board</span>
+  <div><%=@message%></div>
 <% end %>
 
-<div class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <p>One fine body&hellip;</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
 
 

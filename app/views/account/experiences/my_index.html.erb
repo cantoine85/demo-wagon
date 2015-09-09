@@ -13,6 +13,11 @@
         <div class="col-xs-12 no-padding">
           <hr>
           <%=render 'shared/list_item', experience: experience %>
+
+          <div class="experience-details-card hidden" id="experience_<%=experience.id%>">
+            <%= render 'shared/show_details', experience: experience %>
+          </div>
+
         </div>
         <% end %>
       <% end %>
@@ -29,3 +34,15 @@
     </div>
   </div>
 </div>
+
+<%= content_for :after_js do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      $(".list-item").on("click", function(){
+        var experienceId = $(this).data("target");
+        var selector = "#experience_" + experienceId;
+        $(selector).toggleClass("hidden");
+      });
+    });
+  <% end %>
+<% end %>
