@@ -23,6 +23,63 @@
   height: 100%;
 }
 
+// button
+.ghost-btn-white {
+    display: inline-block;
+    padding: 20px 30px 20px 30px ;
+    border-radius: 0.1em;
+    line-height: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+    border: 1px solid white;
+    text-transform: uppercase;
+    font-family: "lato";
+    font-weight: 300;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: darken(white, 10%);
+      background-color: rgba(0, 0, 0, 0.3);
+      border-color: (white, 10%);
+    }
+  }
+  .ghost-btn-holder-banner{
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+.ghost-btn-grey {
+    display: inline-block;
+    padding: 20px 30px 20px 30px ;
+    border-radius: 0.1em;
+    line-height: 10px;
+    color: $grey-dark;
+    // background-color: rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+    border: 1px solid $grey-dark;
+    text-transform: uppercase;
+    font-family: "lato";
+    font-weight: 400;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: lighten($grey-dark, 15%);
+      background-color: darken(white, 12%);
+      border-color: lighten($grey-dark, 15%);
+    }
+  }
+.ghost-btn-holder-bandeau{
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+
 // Titles
 h1 {
   font-size: 28px;
@@ -195,7 +252,6 @@ a {
 .sport {
   background: $sport;
 }
-
 .spiritualité {
   background: $spiritualite;
 }
