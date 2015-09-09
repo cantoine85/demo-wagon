@@ -7,8 +7,14 @@ module Account
     end
 
     def my_index
-      @to_do_experiences = Experience.where(actor: current_user).where(status: "to_do")
-      @done_experiences = Experience.where(actor: current_user).where(status:"done")
+      to_do_experiences = Experience.where(actor: current_user).where(status: "to_do")
+      to_do = hash_experiences_per_category(to_do_experiences)
+      done_experiences = Experience.where(actor: current_user).where(status:"done")
+      done = hash_experiences_per_category(done_experiences)
+      #if params[:category]
+        @to_do_experiences = to_do[params[:category]]
+        @done_experiences = done[params[:category]]
+      #end
     end
 
     def index
@@ -19,7 +25,7 @@ module Account
         @hash_pic = get_last_exp_pic_by_category(@experiences)
 
       else
-        @message = "Vous n'avez pas encore d'expériences vécues dans votre vision board"
+        @message = "Vous n'avez pas encore d'expérience vécue dans votre vision board"
       end
     end
 

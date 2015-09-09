@@ -68,4 +68,8 @@
     left: 0;
     z-index:2;
   }
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
 }
