@@ -26,18 +26,26 @@
   display: flex;
   justify-content: space-around;
   font-weight: 300;
+  padding: 20px;
+  background-color: white;
+
 
   &-item {
     text-align: center;
     font-size: 10px;
 
-    i {
-        font-size: 80px;
+      #toDoCount, #doneCount {
+    font-size:30px;
+
       }
 
-    &-text {
-      font-size: 15px;
+    p {
+      font-size:15px;
       text-transform: uppercase;
     }
+
+    i {
+        font-size: 60px;
+      }
   }
 }
