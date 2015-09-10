@@ -95,8 +95,10 @@ h1 {
   background-color:$red;
   color:white;
 }
+
 h2 {
-  font-size: 18px;
+  font-weight: 300;
+  font-size: 25px;
   margin: 0px;
   padding: 20px;
   color: white;
@@ -228,10 +230,10 @@ a {
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  background-image: image-url('palmiers_background.jpg');
+  background-image: image-url('new_adventure.jpeg');
 
   h1 {
-    padding: 40px;
+    padding-bottom: 20px;
   }
 }
 
