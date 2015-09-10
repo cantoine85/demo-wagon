@@ -2,7 +2,9 @@
   <div class="banner-content">
     <h1 class="padding-60"><%= experience.title %></h1>
     <p>inspiré par <%= image_tag(experience.inspirer.picture, class:'avatar') %></p>
-
+    <div class="banner-category <%= experience.category %>" >
+      <%= experience.category.capitalize %>
+    </div>
   </div>
   <div>
     <i class="fa fa-arrow-down"></i>
