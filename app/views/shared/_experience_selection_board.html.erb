@@ -10,25 +10,27 @@
 
 
 <!-- Heart Item : To do -->
-<span class="board-game-item">
+<div class="board-game-item">
   <%=link_to experiences_path(id: experience, status: "to_do"), class:"hover-red", method: :post, remote: true do %>
-    <span id="toDoCount">
-      <%= current_user.experiences_to_do_count %>
-    </span>
-    <i class="fa fa-heart"></i>
-    <p>Expériences à vivre</p>
+    <%= image_tag "heart.png", class: "img-btn" %>
+    <!-- <i class="fa fa-heart"></i> -->
   <% end %>
-</span>
+   <div id="toDoCount">
+      <%= current_user.experiences_to_do_count %>
+    </div>
+    <p>Expériences à vivre</p>
+</div>
 
 
 <!-- Check Item : Done -->
-<span class="board-game-item">
-  <%=link_to experiences_path(id: experience, status: "done"), class:"hover-green", method: :post, remote: true do %>
-  <span id="doneCount">
+<div class="board-game-item">
+ <%=link_to experiences_path(id: experience, status: "to_do"), class:"hover-red", method: :post, remote: true do %>
+    <%= image_tag "check.png", class: "img-btn" %>
+    <% end %>
+  <div id="doneCount">
     <%= current_user.experiences_done_count %>
-  </span>
-    <i class="fa fa-check"></i>
+  </div>
+   <!--  <i class="fa fa-check"></i> -->
     <p>Expériences vécues</p>
-  <% end %>
-</span>
+</div>
 
