@@ -58,7 +58,7 @@ class ExperiencesController < ApplicationController
 
       @other_experience = Experience.find(ids[rand(0...ids.size)])
     else
-      @message = "nous n'avons plus d'expériences à vous proposer. Revenez très vite pour de nouvelles aventures"
+      @message = "Nous n'avons plus d'expériences à vous proposer. Revenez très vite pour de nouvelles aventures"
     end
 
     # binding.pry
