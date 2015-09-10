@@ -1,12 +1,13 @@
 <div class="banner" id="showDetails" style="background-image: url(<%= experience.adventure.picture.url %>);">
   <div class="banner-content">
-    <h1 class="padding-60"><%= experience.title %></h1>
-    <p>inspiré par <%= image_tag(experience.inspirer.picture, class:'avatar') %></p>
-
+    <h1 class="padding-60"><%= experience.title.capitalize %></h1>
+    <p>
+      inspiré par <%= image_tag(experience.inspirer.picture, class:'avatar') %>
+    </p>
   </div>
-  <div>
-    <i class="fa fa-arrow-down"></i>
+  <div class="banner-category <%= experience.category %>" >
+    <%= experience.category.capitalize %>
   </div>
-
+  <i class="fa fa-angle-down"></i>
   <div class="banner-shadow"></div>
 </div>

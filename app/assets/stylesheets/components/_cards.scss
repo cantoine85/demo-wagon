@@ -71,14 +71,17 @@
     flex-direction: column;
     justify-content: space-around;
     text-align: left;
-    padding: 10px;
-    i {
+    padding: 0px 10px;
+    &-item {
+      border-bottom: 1px solid $grey-lighter;
       padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid $red;
-      background-color: white;
-      border-radius: 50%;
+      i {
+        margin-right: 20px;
+
+      }
     }
+
+
   }
 
 
