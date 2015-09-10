@@ -1,7 +1,9 @@
-<div class="col-xs-12 no-padding">
-  <%=render 'shared/list_item', experience: @experience %>
+<div class = "container margin-bottom-74">
+  <div class="col-xs-12 no-padding">
+    <%=render 'shared/list_item', experience: @experience %>
 
-  <div class="experience-details-card hidden" id="experience_<%=@experience.id%>">
-    <%= render 'shared/show_details', experience: @experience %>
+    <div class="experience-details-card hidden" id="experience_<%=@experience.id%>">
+      <%= render 'shared/show_details', experience: @experience %>
+    </div>
   </div>
 </div>
