@@ -98,13 +98,22 @@
     left: 0px;
     right: 0px;
     bottom: 0px;
+    &-shadow {
+      background-image: linear-gradient(150deg, rgba(200, 100, 10, 0.3) 30%, rgba(40,12,14,0.3) 50%);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+  }
 
 }
 
 .category-bubble-detail {
     color: white;
     font-size: large;
-    background-color: rgba(0, 0, 0, 0.4);
+    // background-color: rgba(0, 0, 0, 0.4);
     height: 150px;
     line-height: 150px;
 }

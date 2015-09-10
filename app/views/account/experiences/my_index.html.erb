@@ -1,4 +1,4 @@
-<div>
+<div class="margin-top-60">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#toDo" aria-controls="toDo" role="tab" data-toggle="tab">A vivre</a></li>
@@ -11,22 +11,23 @@
       <% if @to_do_experiences.present? %>
         <% @to_do_experiences.each do |experience| %>
           <%=render 'shared/list_item', experience: experience %>
-          <div class="experience-details-card hidden" id="experience_<%=experience.id%>">
+          <div id="experience_<%=experience.id%>" class="hidden">
             <%= render 'shared/show_details', experience: experience %>
           </div>
         <% end %>
       <% end %>
     </div>
     <div role="tabpanel" class="tab-pane" id="done">
-
       <% if @done_experiences.present? %>
         <% @done_experiences.each do |experience| %>
-          <hr>
           <h3>TODO</h3>
           <%=render 'shared/patchwork', experience: experience %>
+          <div id="experience_<%=experience.id%>" class="hidden">
+            <%= render 'shared/show_details', experience: experience %>
+          </div>
         <% end %>
       <% else %>
-        <h3>FAILED</h3>
+        <h2>Vous n'avez pas encore vécu d'expériences de ce type. C'est le moment de se lancer!</h2>
       <% end %>
     </div>
   </div>
