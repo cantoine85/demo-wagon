@@ -1,10 +1,10 @@
 <% if @new_experience.errors.any? %>
   // Render new review form with errors
-  $('.banner').html("<%= j render 'shared/banner', experience: @other_experience %>");
+  $('#mainInfo').html("<%= j render 'shared/banner', experience: @other_experience %>");
   console.log("ERREUR")
 <% else %>
   // Create a paragraph for the new review. But hide it.
-  $('.banner').html("<%= j render 'shared/banner', experience: @other_experience %>");
+  $('#mainInfo').html("<%= j render 'shared/banner', experience: @other_experience %>");
   $('#toDoCount').text("<%= current_user.experiences_to_do_count %>");
   $('#doneCount').text("<%= current_user.experiences_done_count %>");
   console.log("SUCCES")

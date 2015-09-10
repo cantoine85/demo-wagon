@@ -23,9 +23,9 @@ class AdventuresController < ApplicationController
     # Récupérer les paramètres de l'aventure créée
     @adventure = Adventure.new(adventure_params)
     @adventure.user = current_user
-    if params[:adventure][:status][:status] == "déjà fait"
+    if params[:adventure][:status][:status] == "Déjà vécu"
       status = "done"
-    elsif params[:adventure][:status][:status] == "fait"
+    elsif params[:adventure][:status][:status] == "A vivre"
       status = "to_do"
     end
     @experience = Experience.new(adventure: @adventure, inspirer: current_user, status: status)

@@ -10,15 +10,10 @@
     <div role="tabpanel" class="tab-pane active" id="toDo">
       <% if @to_do_experiences.present? %>
         <% @to_do_experiences.each do |experience| %>
-        <div class="col-xs-12 no-padding">
-          <hr>
           <%=render 'shared/list_item', experience: experience %>
-
           <div class="experience-details-card hidden" id="experience_<%=experience.id%>">
             <%= render 'shared/show_details', experience: experience %>
           </div>
-
-        </div>
         <% end %>
       <% end %>
     </div>
@@ -26,11 +21,9 @@
 
       <% if @done_experiences.present? %>
         <% @done_experiences.each do |experience| %>
-        <div class="col-xs-12 no-padding">
           <hr>
           <h3>TODO</h3>
           <%=render 'shared/patchwork', experience: experience %>
-        </div>
         <% end %>
       <% else %>
         <h3>FAILED</h3>

@@ -100,7 +100,7 @@ h2 {
   font-weight: 300;
   font-size: 25px;
   margin: 0px;
-  padding: 20px;
+  padding-bottom: 20px;
   color: white;
 }
 
@@ -145,6 +145,28 @@ a {
   a:hover {
     color: $green;
   }
+}
+
+.link-home {
+  font-weight: 300;
+  font-size: 25px;
+  transition: all 0.3s ease;
+
+ &:hover {
+  color: darken(white, 15%) !important;
+  }
+ /* unvisited link */
+ a:link {
+  color: white !important;
+ }
+ /* visited link */
+ a:visited {
+  color: white  !important;
+ }
+ /* selected link */
+ a:active {
+  color: white  !important;
+ }
 }
 
 // Bootstrap fixings

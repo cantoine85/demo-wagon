@@ -1,39 +1,41 @@
 <!-- Description -->
-<div class="experience-details-card-item">
-  <span>
-    <i class="fa fa-align-justify"></i>
-    <% if experience.adventure.description %>
-      <span><%=experience.adventure.description %></span>
+<div class="experience-details-card bg-white">
+  <div class="experience-details-card-item">
+    <span>
+      <i class="fa fa-align-justify"></i>
+      <% if experience.adventure.description=="" %>
+        <span><%=experience.adventure.description %></span>
+      <% else %>
+        <span>Non précisé</span>
+      <% end %>
+    </span>
+  </div>
+
+  <div class="experience-details-card-item">
+    <!-- Start date -->
+    <i class="fa fa-calendar"></i>
+    <% if experience.adventure.start_date %>
+      <span><%= experience.adventure.start_date.strftime("%d-%m-%Y") %></span>
     <% else %>
       <span>Non précisé</span>
     <% end %>
-  </span>
-</div>
-
-<div class="experience-details-card-item">
-  <!-- Start date -->
-  <i class="fa fa-calendar"></i>
-  <% if experience.adventure.start_date %>
-    <span><%= experience.adventure.start_date.strftime("%d-%m-%Y") %></span>
-  <% else %>
-    <span>Non précisé</span>
-  <% end %>
-</div>
-  <!-- End date -->
-<div class="experience-details-card-item">
-  <i class="fa fa-calendar"></i>
-  <% if experience.adventure.end_date %>
-    <span><%= experience.adventure.end_date.strftime("%d-%m-%Y") %></span>
-  <% else %>
-    <span>Non précisé</span>
-  <% end %>
-</div>
-<!-- Address -->
-<div class="experience-details-card-item">
-  <i class="fa fa-compass"></i>
-  <% if experience.adventure.address %>
-    <span><%= experience.adventure.address %></span>
-  <% else %>
-    <span>Non précisé</span>
-  <% end %>
+  </div>
+    <!-- End date -->
+  <div class="experience-details-card-item">
+    <i class="fa fa-calendar"></i>
+    <% if experience.adventure.end_date %>
+      <span><%= experience.adventure.end_date.strftime("%d-%m-%Y") %></span>
+    <% else %>
+      <span>Non précisé</span>
+    <% end %>
+  </div>
+  <!-- Address -->
+  <div class="experience-details-card-item">
+    <i class="fa fa-compass"></i>
+    <% if experience.adventure.address %>
+      <span><%= experience.adventure.address %></span>
+    <% else %>
+      <span>Non précisé</span>
+    <% end %>
+  </div>
 </div>

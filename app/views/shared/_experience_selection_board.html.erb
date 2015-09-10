@@ -1,36 +1,27 @@
 <!-- Experience Selection board : Cross - Hear - Check Board -->
-
-<!-- Cross Item : Not interested -->
-<!-- <div class="board-game-item"> -->
-<!--   <%=link_to experiences_path(id: experience, status: "not_interested"), class:"hover-blue", method: :post, remote: true do %> -->
-<!--     <i class="fa fa-times"></i> -->
-<!--     <div class="board-game-item-text">ne plus <br> me montrer </div> -->
-<!--   <% end %> -->
-<!-- </div> -->
-
-
-<!-- Heart Item : To do -->
-<div class="board-game-item">
-  <%=link_to experiences_path(id: experience, status: "to_do"), class:"hover-red", method: :post, remote: true do %>
-    <%= image_tag "heart.png", class: "img-btn" %>
-    <!-- <i class="fa fa-heart"></i> -->
-  <% end %>
-   <div id="toDoCount">
-      <%= current_user.experiences_to_do_count %>
-    </div>
-    <p>Expériences à vivre</p>
-</div>
-
-
-<!-- Check Item : Done -->
-<div class="board-game-item">
- <%=link_to experiences_path(id: experience, status: "to_do"), class:"hover-red", method: :post, remote: true do %>
-    <%= image_tag "check.png", class: "img-btn" %>
+<div class="board">
+  <!-- Heart Item : To do -->
+  <div class="board-game-item">
+    <%=link_to experiences_path(id: experience, status: "to_do"), class:"hover-red", method: :post, remote: true do %>
+      <%= image_tag "heart.png", class: "img-btn" %>
+      <!-- <i class="fa fa-heart"></i> -->
     <% end %>
-  <div id="doneCount">
-    <%= current_user.experiences_done_count %>
+     <div id="toDoCount">
+        <%= current_user.experiences_to_do_count %>
+      </div>
+      <p>Expériences à vivre</p>
   </div>
-   <!--  <i class="fa fa-check"></i> -->
-    <p>Expériences vécues</p>
-</div>
 
+
+  <!-- Check Item : Done -->
+  <div class="board-game-item">
+   <%=link_to experiences_path(id: experience, status: "to_do"), class:"hover-red", method: :post, remote: true do %>
+      <%= image_tag "check.png", class: "img-btn" %>
+      <% end %>
+    <div id="doneCount">
+      <%= current_user.experiences_done_count %>
+    </div>
+     <!--  <i class="fa fa-check"></i> -->
+      <p>Expériences vécues</p>
+  </div>
+</div>

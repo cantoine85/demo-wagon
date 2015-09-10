@@ -1,31 +1,18 @@
 <% if @message != nil %>
   <div>
-    <h2><%= @message %></h2>
+    <h2 class='padding-60'><%= @message %></h2>
   </div>
 <% else %>
-  <div class = "container margin-footbar">
-    <div class = "row" >
-      <div class="col-xs-12 no-padding text-center ">
-        <div class="banner" id="experience_<%= @experience.id %>" style="background-image: url(<%= @experience.adventure.picture.url %>);">
-          <%= render 'shared/banner', experience: @experience %><
-        </div>
-      </div>
-    </div>
-    <div class="row hidden" id="details">
-      <div class="col-xs-12 bg-white">
-        <div class="experience-details-card">
-          <%= render 'shared/show_details', experience: @experience %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 padding-0">
-        <div class="board">
-          <%= render 'shared/experience_selection_board', experience: @experience %>
-        </div>
-      </div>
-    </div>
+<!--   <div class="banner" id="experience_<%= @experience.id %>" style="background-image: url(<%= @experience.adventure.picture.url %>);"> -->
+  <div id='mainInfo'>
+    <%= render 'shared/banner', experience: @experience %>
   </div>
+<!--   </div> -->
+<!-- <div class="row hidden" id="details"> -->
+  <div id="detailInfo" class="hidden">
+    <%= render 'shared/show_details', experience: @experience %>
+  </div>
+  <%= render 'shared/experience_selection_board', experience: @experience %>
 
 <% end %>
 
@@ -34,7 +21,7 @@
   <%= javascript_tag do %>
     $(document).ready(function() {
       $('#showDetails').on('click', function() {
-        $('#details').toggleClass('hidden');
+        $('#detailInfo').toggleClass('hidden');
         if($('.fa-arrow-up').length > 0) {
           $('.fa-arrow-up').attr('class', "fa fa-arrow-down");
         } else {
