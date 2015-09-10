@@ -24,6 +24,7 @@ class AdventuresController < ApplicationController
     # Récupérer les paramètres de l'aventure créée
     @adventure = Adventure.new(adventure_params)
     @adventure.user = current_user
+    raise
     @experience = Experience.new(adventure: @adventure, inspirer: current_user)
 
     # # Associer un utilisateur à l'aventure
