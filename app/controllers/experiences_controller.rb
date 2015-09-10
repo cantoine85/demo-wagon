@@ -33,7 +33,10 @@ class ExperiencesController < ApplicationController
     @new_experience = Experience.new(adventure: adventure, actor: current_user, inspirer: inspirer, status: status)
     #binding.pry
     # 4 - Save your own experience and redirect to aleatory experience
-    experiences = Experience.where("inspirer_id != #{current_user.id} or actor_id != #{current_user.id}")
+    # 4' - Select experiences where adventure != to adventures current_user knows
+    adventures = set_current_user_adventures
+    experiences = Experience.where("adventure_id NOT IN (?)", adventures)
+
     ids = experiences.map { |experience| experience.id }
     @other_experience = Experience.find(ids[rand(0...ids.size)])
     # binding.pry
@@ -56,6 +59,14 @@ class ExperiencesController < ApplicationController
     @experience = Experience.find(params[:id])
   end
 
+  def set_current_user_adventures
+    experiences = Experience.where("inspirer_id = #{current_user.id} or actor_id = #{current_user.id}")
+    adventures = []
+    experiences.each do |experience|
+      adventures << experience.adventure_id
+    end
+    adventures.uniq
+  end
 
 
 end

@@ -33,6 +33,7 @@ module Account
     def todo
       @experiences = Experience.where(actor: current_user).where(status: "to_do")
       @categories = get_categories(@experiences)
+      raise
     end
 
     def done
