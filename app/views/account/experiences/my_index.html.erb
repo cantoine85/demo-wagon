@@ -1,43 +1,38 @@
-<div>
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#toDo" aria-controls="toDo" role="tab" data-toggle="tab">A vivre</a></li>
-    <li role="presentation"><a href="#done" aria-controls="done" role="tab" data-toggle="tab">Vécu</a></li>
-  </ul>
+<div class="bubble <%=@category%> text-center">
+  <div class="bubble-content"><%=@category%></div>
+</div>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#toDo" aria-controls="toDo" role="tab" data-toggle="tab">A vivre</a></li>
+  <li role="presentation"><a href="#done" aria-controls="done" role="tab" data-toggle="tab">Vécu</a></li>
+</ul>
 
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="toDo">
-      <% if @to_do_experiences.present? %>
-        <% @to_do_experiences.each do |experience| %>
-        <div class="col-xs-12 no-padding">
-          <hr>
-          <%=render 'shared/list_item', experience: experience %>
-
-          <div class="experience-details-card hidden" id="experience_<%=experience.id%>">
-            <%= render 'shared/show_details', experience: experience %>
-          </div>
-
+<!-- Tab panes -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="toDo">
+    <% if @to_do_experiences.present? %>
+      <% @to_do_experiences.each do |experience| %>
+        <%=render 'shared/list_item', experience: experience %>
+        <div id="experience_<%=experience.id%>" class="hidden">
+          <%= render 'shared/show_details', experience: experience %>
         </div>
-        <% end %>
       <% end %>
-    </div>
-    <div role="tabpanel" class="tab-pane" id="done">
-
-      <% if @done_experiences.present? %>
-        <% @done_experiences.each do |experience| %>
-        <div class="col-xs-12 no-padding">
-          <hr>
-          <h3>TODO</h3>
-          <%=render 'shared/patchwork', experience: experience %>
+    <% end %>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="done">
+    <% if @done_experiences.present? %>
+      <% @done_experiences.each do |experience| %>
+        <%=render 'shared/list_item', experience: experience %>
+        <div id="experience_<%=experience.id%>" class="hidden">
+          <%= render 'shared/show_details', experience: experience %>
         </div>
-        <% end %>
-      <% else %>
-        <h3>FAILED</h3>
       <% end %>
-    </div>
+    <% else %>
+      <h2>Vous n'avez pas encore vécu d'expériences de ce type. C'est le moment de se lancer!</h2>
+    <% end %>
   </div>
 </div>
+
 
 <%= content_for :after_js do %>
   <%= javascript_tag do %>

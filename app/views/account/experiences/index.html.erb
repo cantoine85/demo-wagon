@@ -1,5 +1,5 @@
 <% if @experiences.present? %>
-  <div class="container margin-footbar">
+  <div class="container margin-footbar link-home">
     <row>
       <div class="col-xs-12 text-center">
         <div class="bubble-container" style="background-image: url(<%=@hash_pic[@categories.first]%>)">
@@ -7,14 +7,16 @@
             <div class="icon-badge icon-badge icon-badge-<%=@categories.first%>">
               <%=@hash_count[@categories.first].size%>
             </div>
-            <div class="category-container category-container-twelve">
+            <%= link_to account_my_index_path(category: @categories.first) do %>
+              <div class="category-container category-container-twelve">
+                <div class="category-container-shadow">
               <div class="category-bubble-detail">
-                <%= link_to account_my_index_path(category: @categories.first) do %>
                 <%=@categories.first%>
                 <%@categories.delete(@categories.first)%>
-                <% end %>
               </div>
+
             </div>
+            <% end %>
           </div>
         </div>
       </div>
@@ -27,13 +29,14 @@
             <div class="icon-badge icon-badge-<%=category%>">
               <%= @hash_count[category].size %>
             </div>
-            <div class="category-container">
-              <div class="category-bubble-detail">
-                <%= link_to account_my_index_path(category: category) do %>
-                <%=category%>
-                <% end %>
+            <%= link_to account_my_index_path(category: category) do %>
+              <div class="category-container">
+                <div class="category-container-shadow">
+                <div class="category-bubble-detail">
+                  <%=category%>
+                </div>
               </div>
-            </div>
+            <% end %>
           </div>
         </div>
       <% end %>

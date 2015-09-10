@@ -23,7 +23,7 @@
         <div class="col-xs-12 text-center inline">
           <%= f.simple_fields_for :status do |ff| %>
             <div class="radio-button">
-              <%= ff.input :status, label: false, as: :radio_buttons, checked: 'déjà fait', collection: ['déjà fait','à faire'] %>
+              <%= ff.input :status, label: false, as: :radio_buttons, checked: 'A vivre', collection: ['A vivre','Déjà vécu',] %>
             </div>
           <% end %>
           <%= f.button :submit, "Créez", class: 'ghost-btn-white' %>

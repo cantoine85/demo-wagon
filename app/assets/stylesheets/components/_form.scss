@@ -40,7 +40,8 @@
 
 .radio-button {
   .radio_buttons {
-    display: flex
+    display: flex;
+    justify-content: center;
   }
   .radio {
     margin: 14px;

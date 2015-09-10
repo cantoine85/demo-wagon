@@ -7,6 +7,7 @@ module Account
     end
 
     def my_index
+
       to_do_experiences = Experience.where(actor: current_user).where(status: "to_do")
       to_do = hash_experiences_per_category(to_do_experiences)
       done_experiences = Experience.where(actor: current_user).where(status:"done")
@@ -14,8 +15,7 @@ module Account
       #if params[:category]
         @to_do_experiences = to_do[params[:category]]
         @done_experiences = done[params[:category]]
-        #raise
-
+        @category = params[:category]
       #end
     end
 
@@ -33,7 +33,6 @@ module Account
     def todo
       @experiences = Experience.where(actor: current_user).where(status: "to_do")
       @categories = get_categories(@experiences)
-      raise
     end
 
     def done

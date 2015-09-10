@@ -4,7 +4,6 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 
-
 // Images
 
 .img-square {
@@ -100,7 +99,7 @@ h2 {
   font-weight: 300;
   font-size: 25px;
   margin: 0px;
-  padding: 20px;
+  padding-bottom: 20px;
   color: white;
 }
 
@@ -170,6 +169,28 @@ a {
   }
 }
 
+.link-home {
+  font-weight: 300;
+  font-size: 25px;
+  transition: all 0.3s ease;
+
+ &:hover {
+  color: darken(white, 15%) !important;
+  }
+ /* unvisited link */
+ a:link {
+  color: white !important;
+ }
+ /* visited link */
+ a:visited {
+  color: white  !important;
+ }
+ /* selected link */
+ a:active {
+  color: white  !important;
+ }
+}
+
 // Bootstrap fixings
 .padding-0 {
   padding: 0px;
@@ -215,6 +236,10 @@ a {
 // Margin to take the footbar into account
 .margin-footbar {
   margin-bottom: 50px;
+}
+
+.margin-top-60 {
+  margin-top: 60px;
 }
 
 .large {
