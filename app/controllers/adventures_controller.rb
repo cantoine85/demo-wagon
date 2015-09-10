@@ -24,6 +24,7 @@ class AdventuresController < ApplicationController
     # Récupérer les paramètres de l'aventure créée
     @adventure = Adventure.new(adventure_params)
     @adventure.user = current_user
+    raise
     @experience = Experience.new(adventure: @adventure, inspirer: current_user)
 
     # # Associer un utilisateur à l'aventure
@@ -71,14 +72,6 @@ class AdventuresController < ApplicationController
     @adventure.destroy
     redirect_to adventures_path
   end
-
-  # def edit
-  #   if @adventure.token == cookies[:temporary_exp_token]
-  #     display_validate_past_adventure
-  #   else
-  #     display_classical_edit_form
-  #   end
-  # end
 
   private
 
