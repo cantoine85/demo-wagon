@@ -7,6 +7,8 @@
 <!--     <div class="board-game-item-text">ne plus <br> me montrer </div> -->
 <!--   <% end %> -->
 <!-- </div> -->
+
+
 <!-- Heart Item : To do -->
 <span class="board-game-item">
   <%=link_to experiences_path(id: experience, status: "to_do"), class:"hover-red", method: :post, remote: true do %>
@@ -17,6 +19,8 @@
     <p>Expériences à vivre</p>
   <% end %>
 </span>
+
+
 <!-- Check Item : Done -->
 <span class="board-game-item">
   <%=link_to experiences_path(id: experience, status: "done"), class:"hover-green", method: :post, remote: true do %>

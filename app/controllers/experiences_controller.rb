@@ -4,7 +4,9 @@ class ExperiencesController < ApplicationController
 
   def index
     @experiences = Experience.all
-    ids = Experience.all.map { |experience| experience.id }
+
+    experiences = Experience.where("inspirer_id != #{current_user.id} or actor_id != #{current_user.id}")
+    ids = experiences.map { |experience| experience.id }
     @experience = Experience.find(ids[rand(0...ids.size)])
   end
 
@@ -31,7 +33,8 @@ class ExperiencesController < ApplicationController
     @new_experience = Experience.new(adventure: adventure, actor: current_user, inspirer: inspirer, status: status)
     #binding.pry
     # 4 - Save your own experience and redirect to aleatory experience
-    ids = Experience.all.map { |experience| experience.id }
+    experiences = Experience.where("inspirer_id != #{current_user.id} or actor_id != #{current_user.id}")
+    ids = experiences.map { |experience| experience.id }
     @other_experience = Experience.find(ids[rand(0...ids.size)])
     # binding.pry
     if @new_experience.save
