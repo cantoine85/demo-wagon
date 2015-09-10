@@ -123,6 +123,29 @@ a {
   }
 }
 
+.link-home {
+  font-weight: 300;
+  font-size: 25px;
+  transition: all 0.3s ease;
+
+  &:hover {
+      color: darken(white, 15%) !important;
+    }
+  /* unvisited link */
+  a:link {
+      color: white !important;
+  }
+  /* visited link */
+  a:visited {
+      color: white  !important;
+  }
+  /* selected link */
+  a:active {
+      color: white  !important;
+  }
+}
+
+
 .link-red {
   a:hover {
     color: $red;
@@ -247,19 +270,30 @@ a {
 }
 
 .bg-deco {
-  height: 100%;
   background-size: cover;
+  height: 100hv !important;
+  // display:block !important;
+  // overflow:auto !important;
   background-position: center;
   color: white;
   padding-top: 70px;
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  background-image: image-url('new_adventure.jpeg');
-
   h1 {
     padding-bottom: 20px;
   }
+  &-new-adv {
+    background-image: image-url('new_adventure.jpeg');
+  }
+  &-connect {
+    background-image: image-url('inscription_background.jpeg');
+
+  }
+}
+
+.full-screen {
+  height: 100hv;
 }
 
 .bg-transparent {

@@ -1,5 +1,5 @@
 class ExperiencesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show]
+  # skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_experience, only: [:show, :show_details, :create ]
   before_action :set_current_user_adventures, only: [:index, :create ]
 
