@@ -17,14 +17,18 @@ class AdventuresController < ApplicationController
 
   def new
     @adventure = Adventure.new
-    @adventure.experiences.build
   end
 
   def create
     # Récupérer les paramètres de l'aventure créée
     @adventure = Adventure.new(adventure_params)
     @adventure.user = current_user
-    @experience = Experience.new(adventure: @adventure, inspirer: current_user)
+    if params[:adventure][:status][:status] == "déjà fait"
+      status = "done"
+    elsif params[:adventure][:status][:status] == "fait"
+      status = "to_do"
+    end
+    @experience = Experience.new(adventure: @adventure, inspirer: current_user, status: status)
 
     # # Associer un utilisateur à l'aventure
     # if user_signed_in?
@@ -75,7 +79,16 @@ class AdventuresController < ApplicationController
   private
 
   def adventure_params
-    params.require(:adventure).permit(:title, :category, :description, :picture, :start_date, :end_date, :address, :duration)
+    params.require(:adventure).permit(
+      :title,
+      :category,
+      :description,
+      :picture,
+      :start_date,
+      :end_date,
+      :address,
+      :duration
+    )
   end
 
   def set_adventure

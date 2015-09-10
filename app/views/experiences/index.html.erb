@@ -1,16 +1,13 @@
-<!-- <h1 class="box-red text-center padding-60">Découvrez toutes les expériences de votre réseau!</h1> -->
-
 <% if @message != nil %>
   <div>
     <h2><%= @message %></h2>
   </div>
-
 <% else %>
-
-  <div class = "container margin-bottom-74">
+  <div class = "container margin-footbar">
     <div class = "row" >
       <div class="col-xs-12 no-padding text-center ">
-          <%= render 'shared/banner', experience: @experience %>
+        <div class="banner" id="experience_<%= @experience.id %>" style="background-image: url(<%= @experience.adventure.picture.url %>);">
+          <%= render 'shared/banner', experience: @experience %><
         </div>
       </div>
     </div>
