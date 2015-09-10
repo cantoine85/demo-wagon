@@ -14,7 +14,7 @@
   <!-- Start date -->
   <i class="fa fa-calendar"></i>
   <% if experience.adventure.start_date %>
-    <span><%= experience.adventure.start_date %></span>
+    <span><%= experience.adventure.start_date.strftime("%d-%m-%Y") %></span>
   <% else %>
     <span>Non précisé</span>
   <% end %>
@@ -23,7 +23,7 @@
 <div class="experience-details-card-item">
   <i class="fa fa-calendar"></i>
   <% if experience.adventure.end_date %>
-    <span><%= experience.adventure.end_date %></span>
+    <span><%= experience.adventure.end_date.strftime("%d-%m-%Y") %></span>
   <% else %>
     <span>Non précisé</span>
   <% end %>
@@ -32,7 +32,7 @@
 <div class="experience-details-card-item">
   <i class="fa fa-hourglass-start"></i>
   <% if experience.adventure.duration %>
-    <span><%= experience.adventure.duration %></span>
+    <span><%= experience.adventure.duration %> heures</span>
   <% else %>
     <span>Non précisé</span>
   <% end %>
