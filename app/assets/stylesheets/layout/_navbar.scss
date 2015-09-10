@@ -8,6 +8,14 @@
     z-index: 1;
     width: 100%;
   }
+
+  &-relative {
+    background: transparent;
+    position: relative;
+    top: 0;
+    z-index: 2;
+  }
+
   &-absolute {
     background: transparent;
     position: absolute;
