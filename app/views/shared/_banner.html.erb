@@ -1,13 +1,24 @@
-<div class=" banner" id="showDetails"style='<%= experience.adventure.picture? ? "background-image: url( #{experience.adventure.picture.url});" : "" %>'>
+<% if @message != nil %>
+  <div>
+    <h2><%= @message %></h2>
+  </div>
 
-  <div class="banner-content">
-    <h1 class="padding-60"><%= experience.title.capitalize %></h1>
-    <p>inspiré par <%= experience.inspirer.picture? ? image_tag(experience.inspirer.picture, class:'avatar') : experience.inspirer.email %>
-    </p>
+<% else %>
+  <div class="banner" id="showDetails"style='<%= experience.adventure.picture? ? "background-image: url( #{experience.adventure.picture.url});" : "" %>'>
+
+    <div class="banner-content">
+      <h1 class="padding-60"><%= experience.title.capitalize %></h1>
+      <p>inspiré par <%= experience.inspirer.picture? ? image_tag(experience.inspirer.picture, class:'avatar') : experience.inspirer.email %>
+      </p>
+    </div>
+    <div class="banner-category <%= experience.category %>" >
+      <%= experience.category.capitalize %>
+    </div>
+    <i class="fa fa-angle-down"></i>
+    <div class="banner-shadow"></div>
   </div>
-  <div class="banner-category <%= experience.category %>" >
-    <%= experience.category.capitalize %>
-  </div>
-  <i class="fa fa-angle-down"></i>
-  <div class="banner-shadow"></div>
-</div>
+<% end %>
+
+
+
+

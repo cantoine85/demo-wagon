@@ -26,13 +26,14 @@ module Account
         @hash_count = hash_experiences_per_category(@experiences)
         @hash_pic = get_last_exp_pic_by_category(@experiences)
       else
-        @message = "Vous n'avez pas encore d'expérience vécue dans votre vision board"
+        @message = "Vous n'avez pas encore choisi d'expérience à vivre"
       end
     end
 
     def todo
       @experiences = Experience.where(actor: current_user).where(status: "to_do")
       @categories = get_categories(@experiences)
+      raise
     end
 
     def done
