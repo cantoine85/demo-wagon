@@ -1,13 +1,27 @@
 class ExperiencesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
   before_action :set_experience, only: [:show, :show_details, :create ]
+  before_action :set_current_user_adventures, only: [:index, :create ]
 
   def index
-    @experiences = Experience.all
+    # @experiences = Experience.all
+    @message = nil
+    # experiences = Experience.where("inspirer_id != #{current_user.id} or actor_id != #{current_user.id}")
 
-    experiences = Experience.where("inspirer_id != #{current_user.id} or actor_id != #{current_user.id}")
-    ids = experiences.map { |experience| experience.id }
-    @experience = Experience.find(ids[rand(0...ids.size)])
+    if @adventures != []
+      experiences = Experience.where("adventure_id NOT IN (?)", @adventures)
+    else
+      experiences = Experience.all
+    end
+
+    # ids = experiences.map { |experience| experience.id }
+    if experiences != []
+      # @experience = Experience.find(ids[rand(0...ids.size)])
+      @experience = experiences.sample
+    else
+      @message = "nous n'avons plus d'expériences à vous proposer. Revenez très vite pour de nouvelles aventures"
+    end
+    # binding.pry
   end
 
   def show
@@ -34,11 +48,19 @@ class ExperiencesController < ApplicationController
     #binding.pry
     # 4 - Save your own experience and redirect to aleatory experience
     # 4' - Select experiences where adventure != to adventures current_user knows
-    adventures = set_current_user_adventures
-    experiences = Experience.where("adventure_id NOT IN (?)", adventures)
+    @adventures << adventure.id
+
+    experiences = Experience.where("adventure_id NOT IN (?)", @adventures)
+
 
     ids = experiences.map { |experience| experience.id }
-    @other_experience = Experience.find(ids[rand(0...ids.size)])
+    if ids != []
+
+      @other_experience = Experience.find(ids[rand(0...ids.size)])
+    else
+      @message = "nous n'avons plus d'expériences à vous proposer. Revenez très vite pour de nouvelles aventures"
+    end
+
     # binding.pry
     if @new_experience.save
       respond_to do |format|
@@ -61,11 +83,11 @@ class ExperiencesController < ApplicationController
 
   def set_current_user_adventures
     experiences = Experience.where("inspirer_id = #{current_user.id} or actor_id = #{current_user.id}")
-    adventures = []
+    @adventures = []
     experiences.each do |experience|
-      adventures << experience.adventure_id
+      @adventures << experience.adventure_id
     end
-    adventures.uniq
+    @adventures.uniq!
   end
 
 
