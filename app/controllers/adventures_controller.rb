@@ -28,9 +28,7 @@ class AdventuresController < ApplicationController
     elsif params[:adventure][:status][:status] == "fait"
       status = "to_do"
     end
-
     @experience = Experience.new(adventure: @adventure, inspirer: current_user, status: status)
-
 
     # # Associer un utilisateur à l'aventure
     # if user_signed_in?
