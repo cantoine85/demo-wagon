@@ -1,7 +1,8 @@
-<div class="banner" id="showDetails" style="background-image: url(<%= experience.adventure.picture.url %>);">
+<div class="banner" id="showDetails"style='<%= experience.adventure.picture? ? "background-image: url( #{experience.adventure.picture.url});" : "" %>'>
+
   <div class="banner-content">
     <h1 class="padding-60"><%= experience.title %></h1>
-    <p>inspiré par <%= image_tag(experience.inspirer.picture, class:'avatar') %></p>
+    <p>inspiré par <%= experience.inspirer.picture? ? image_tag(experience.inspirer.picture, class:'avatar') : experience.inspirer.email %></p>
 
   </div>
   <div>
