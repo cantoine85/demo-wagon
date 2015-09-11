@@ -3,6 +3,6 @@ class PagesController < ApplicationController
   before_filter :disable_footbar, only: :home
 
   def home
-    @disable_footbar = true
+
   end
 end
