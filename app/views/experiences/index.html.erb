@@ -7,8 +7,6 @@
     <div id='mainInfo'>
       <%= render 'shared/banner', experience: @experience %>
     </div>
-  <!--   </div> -->
-  <!-- <div class="row hidden" id="details"> -->
     <div id="detailInfo" class="hidden">
       <%= render 'shared/show_details', experience: @experience %>
     </div>
@@ -21,6 +19,7 @@
     $(document).ready(function() {
       $('#showDetails').on('click', function() {
         $('#detailInfo').toggleClass('hidden');
+
         if($('.fa-arrow-up').length > 0) {
           $('.fa-arrow-up').attr('class', "fa fa-arrow-down");
         } else {
