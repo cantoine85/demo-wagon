@@ -24,7 +24,7 @@
 
    <row>
      <% @categories.each do |category| %>
-       <div class="col-xs-6 text-center">
+       <div class="col-xs-12 text-center">
          <div class="bubble-container" style="background-image: url(<%=@hash_pic[category]%>)">
            <div class="icon-badge icon-badge-<%=category%>">
              <%= @hash_count[category].size %>
