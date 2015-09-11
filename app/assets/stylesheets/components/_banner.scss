@@ -49,6 +49,7 @@
         font-weight: 400;
         font-size: 25px;
         text-transform: uppercase;
+        padding: 16px;
     }
 
     h2 {
@@ -129,6 +130,7 @@
 
   &-category {
     position: absolute;
+    font-size: 400;
     top: 78px;
     left: 0px;
     z-index: 2;
