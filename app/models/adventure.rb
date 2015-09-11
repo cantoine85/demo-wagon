@@ -16,7 +16,7 @@ class Adventure < ActiveRecord::Base
 
   # Add paperclip picture
   has_attached_file :picture,
-    styles: { medium: "500x500>", thumb: "100x100>" }
+    styles: { medium: "500x500>", thumb: "200x200>" }
 
     # Validation for picture
   validates_attachment_content_type :picture,

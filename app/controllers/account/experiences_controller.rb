@@ -75,7 +75,7 @@ module Account
       categories = get_categories(experiences)
       categories.each do |cat|
         array = hash[cat]
-        pic = array.last.adventure.picture.url
+        pic = array.last.adventure.picture.url(:medium)
         hash[cat] = pic
       end
       hash
