@@ -37,12 +37,16 @@
   justify-content: space-around;
   font-weight: 300;
   padding: 20px;
-  background-color: white;
 
 
   &-item {
     text-align: center;
     font-size: 10px;
+
+    .img-btn {
+      width:50px;
+      height: 46px;
+    }
 
 
       #toDoCount, #doneCount {
@@ -51,7 +55,7 @@
       }
 
     p {
-      font-size:15px;
+      font-size:13px;
       text-transform: uppercase;
     }
 
