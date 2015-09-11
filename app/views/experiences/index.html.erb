@@ -17,7 +17,7 @@
 <%= content_for :after_js do %>
   <%= javascript_tag do %>
     $(document).ready(function() {
-      $('#showDetails').on('click', function() {
+      $('#mainInfo').on('click', "#showDetails", function() {
         $('#detailInfo').toggleClass('hidden');
 
         if($('.fa-arrow-up').length > 0) {
