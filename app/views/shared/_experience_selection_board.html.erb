@@ -15,7 +15,7 @@
 
   <!-- Check Item : Done -->
   <div class="board-game-item">
-   <%=link_to experiences_path(id: experience, status: "to_do"), class:"hover-red", method: :post, remote: true do %>
+   <%=link_to experiences_path(id: experience, status: "done"), class:"hover-red", method: :post, remote: true do %>
       <%= image_tag "check.png", class: "img-btn" %>
       <% end %>
     <div id="doneCount">
