@@ -4,7 +4,7 @@
       <p class="padding-60"><%= @message %></p>
     <% else %>
       <h1 class="padding-60"><%= experience.title.capitalize %></h1>
-      <p>inspiré par <%= experience.inspirer.picture? ? image_tag(experience.inspirer.picture, class:'avatar') : experience.inspirer.email %>
+      <p>inspiré par <%=experience.inspirer.first_name%> <%= experience.inspirer.picture? ? image_tag(experience.inspirer.picture, class:'avatar') : "" %>
       </p>
     <% end %>
   </div>
