@@ -30,7 +30,7 @@
   }
 
   &-shadow {
-    background-image: linear-gradient(150deg, rgba(200, 100, 10, 0.3) 30%, rgba(40,12,14,0.3) 50%);
+    background-image: linear-gradient(150deg, rgba(200,70,30, 0.3) 10%, rgba(40,21,14,0.8) 80%);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -46,13 +46,13 @@
     // line-height: 1.1;
 
     h1 {
-        font-weight: 300;
+        font-weight: 400;
         font-size: 25px;
         text-transform: uppercase;
     }
 
     h2 {
-      font-weight: 300;
+      font-weight: 400;
       font-size: 25px;
     }
     p {
@@ -89,7 +89,7 @@
     left: 0;
     right: 0;
     z-index: 1;
-    background-image: linear-gradient(150deg, rgba(200, 100, 10, 0.3) 30%, rgba(40,12,14,0.3) 50%);
+    background-image: linear-gradient(150deg, rgba(200,70,30, 0.3) 10%, rgba(40,21,14,0.8) 80%);
   }
 
   &-content {
@@ -106,7 +106,7 @@
 
     h1 {
       padding: 0px;
-      font-weight: 300;
+      font-weight: 400;
     }
   }
 
