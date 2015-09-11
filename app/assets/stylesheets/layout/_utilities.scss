@@ -96,7 +96,7 @@ h1 {
 }
 
 h2 {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 25px;
   margin: 0px;
   padding-bottom: 20px;
@@ -191,6 +191,51 @@ a {
  }
 }
 
+.link-sign {
+  font-weight: 300;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  margin : 10px;
+  padding : 20px;
+
+ &:hover {
+  color: darken(white, 15%) !important;
+  }
+ /* unvisited link */
+ a:link {
+  color: white !important;
+ }
+ /* visited link */
+ a:visited {
+  color: white  !important;
+ }
+ /* selected link */
+ a:active {
+  color: white  !important;
+ }
+}
+
+
+.ghost-btn-facebook {
+    display: inline-block !important;
+    padding: 20px 30px 20px 30px !important;
+    border-radius: 0.2em !important;
+    line-height: 10px !important;
+    color: black !important;
+    background-color: #3b5998 !important;
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    font-family: "lato" !important;
+    font-weight: 300 !important;
+    transition: all 0.3s ease !important;
+
+    &:hover {
+      color: darken(white, 10%);
+      background-color: rgba(0, 0, 0, 0.3);
+      border-color: (white, 10%);
+    }
+  }
+
 // Bootstrap fixings
 .padding-0 {
   padding: 0px;
@@ -271,10 +316,16 @@ a {
 
 .bg-deco {
   background-size: cover;
-  height: 100hv !important;
+  overflow: hidden;
+  position: relative;
+  // height: 100hv !important;
   // display:block !important;
   // overflow:auto !important;
   background-position: center;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
   color: white;
   padding-top: 70px;
   padding-bottom: 20px;
@@ -287,12 +338,23 @@ a {
     background-image: image-url('new_adventure.jpeg');
   }
   &-connect {
-    background-image: image-url('inscription_background.jpeg');
+    background-image: image-url('inscription_background.jpg');
   }
   &-profil {
     background-image: image-url('pink-sky.jpg');
   }
+
+  &-shadow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-image: linear-gradient(150deg, rgba(200, 100, 10, 0.5) 20%, rgba(40,12,14,0.6) 50%);
+  }
 }
+
 
 .full-screen {
   height: 100hv;
