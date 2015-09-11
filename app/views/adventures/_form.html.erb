@@ -13,17 +13,17 @@
       </div>
       <div class="row">
         <div class="col-xs-5 col-xs-offset-1">
-          <%= f.input :start_date, label:false, placeholder: "Date de début", as: :string, input_html: {class: 'datetime'}%>
+          <%= f.input :start_date, label:false, placeholder: "Début", as: :string, input_html: {class: 'datetime'}%>
         </div>
         <div class="col-xs-5">
-          <%= f.input :end_date, label:false, placeholder: "Date de fin", as: :string, input_html: {class: 'datetime'}%>
+          <%= f.input :end_date, label:false, placeholder: "Fin", as: :string, input_html: {class: 'datetime'}%>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12 text-center inline">
           <%= f.simple_fields_for :status do |ff| %>
             <div class="radio-button">
-              <%= ff.input :status, label: false, as: :radio_buttons, checked: 'A vivre', collection: ['A vivre','Déjà vécu',] %>
+              <%= ff.input :status, label: false, as: :radio_buttons, checked: 'A vivre', collection: ['A vivre',"S'en souvenir",] %>
             </div>
           <% end %>
           <%= f.button :submit, "Créez", class: 'ghost-btn-white' %>
