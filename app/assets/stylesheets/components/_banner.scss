@@ -102,13 +102,20 @@
     flex-flow:column;
     justify-content: center;
     z-index: 2;
-    padding: 40px;
+    padding: 20px;
 
     h1 {
       padding: 0px;
       font-weight: 400;
     }
   }
+
+  #showDetails {
+    position:absolute;
+    right: 0px;
+    left: 0px;
+    bottom:0px;
+    }
 
   i {
     position:absolute;
